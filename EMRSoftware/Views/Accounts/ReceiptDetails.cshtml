@@ -1,0 +1,214 @@
+﻿@model EMRSoftware.Models.Receipt
+
+@{
+    ViewBag.Title = "ReceiptDetails";
+}
+
+<h2>Receipt Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ReceiptID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReceiptID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ReceiptStatu.ReceiptStatusName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReceiptStatu.ReceiptStatusName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReceiptType.ReceiptTypeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReceiptType.ReceiptTypeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WorkingDay.WorkingDayName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WorkingDay.WorkingDayName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WorkingMonth.WorkingMonthName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WorkingMonth.WorkingMonthName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WorkingYear.WorkingYearName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WorkingYear.WorkingYearName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PatientID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PatientID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReceiptName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReceiptName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReceiptDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReceiptDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ManualReceipt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ManualReceipt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReceiptAmount)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReceiptAmount)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReceiptAmt1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReceiptAmt1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReceiptAmt2)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReceiptAmt2)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReceiptAmt3)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReceiptAmt3)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Purpose)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Purpose)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BankName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BankName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ChequeNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChequeNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ChequeDetails)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChequeDetails)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ChequeDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ChequeDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "ReceiptEdit", new { id = Model.ReceiptID }) |
+    @Html.ActionLink("Back to List", "ReceiptIndex")
+</p>
+@if (ViewBag.PatientBill.Count != 0)
+{<br /><br />
+    <h3>Patient Bill</h3>
+    <table class="table table-striped">
+        <thead>
+            <tr style="background-color:darkgray">
+                <th> Patient BIll ID</th>
+                <th>Hosp. No</th>
+                <th>Visit No</th>
+                <th>Table ID</th>
+                <th>Amount</th>
+                <th>Date</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (ViewBag.PatientBill.Count == 0)
+            {
+                <tr>
+                    <td colspan="7" style="color:red"> No match found</td>
+                </tr>
+            }
+            else
+            {
+                foreach (var item in ViewBag.PatientBill)
+                {
+                    <tr>
+                        <td>@item.PatientBillID</td>
+                        <td>@item.PatientID</td>
+                        <td>@item.VisitationID</td>
+                        <td>@item.TableID</td>
+                        <td>@item.ReceiptAmt1</td>
+                        <td>@item.ReceiptDate1</td>
+                        <td>
+                            @Html.ActionLink("Edit", "BillingGroupEdit", new { id = item.PatientBillID }) |
+                            @Html.ActionLink("Details", "BillingGroupDetails", new { id = item.PatientBillID }) |
+                            @Html.ActionLink("Delete", "BillingGroupDelete", new { id = item.PatientBillID })
+
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+
+}

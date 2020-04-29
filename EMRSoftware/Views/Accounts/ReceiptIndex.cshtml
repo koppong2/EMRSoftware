@@ -1,0 +1,68 @@
+﻿@model IPagedList<EMRSoftware.Models.Receipt>
+@using PagedList;
+@using PagedList.Mvc;
+@using System.Linq
+
+@{
+    ViewBag.Title = "ReceiptIndex";
+}
+
+<h2>Receipt List</h2>
+
+<p>
+    @Html.ActionLink("Create New", "ReceiptCreate")
+</p>
+<div align="right">
+    @using (Html.BeginForm("ReceiptIndex", "Accounts", FormMethod.Get))
+    {
+        <input type="text" style="height:40px; width:250px" id="searching" name="searching" /> <input type="submit" value="Search" style="background-color:blue;border:black 2px solid;width:120px;height:40px" />
+    }
+</div>
+<br />
+<table class="table table-striped">
+    <thead>
+        <tr style="background-color:darkgray">
+            <th> @Html.ActionLink("ReceiptID", "ReceiptIndex", new { sortby = ViewBag.SortReceiptIDParameter, searchby = Request.QueryString["searchby"] })</th>
+            <th> Name</th>
+            <th>@Html.ActionLink("Hosp. No", "ReceiptIndex", new { sortby = ViewBag.SortPatientIdParameter, searchby = Request.QueryString["searchby"] })</th>
+            <th>@Html.ActionLink("Date", "ReceiptIndex", new { sortby = ViewBag.SortReceiptDateParameter, searchby = Request.QueryString["searchby"] })</th>
+            <th>@Html.ActionLink("Purpose", "ReceiptIndex", new { sortby = ViewBag.SortPurposeParameter, searchby = Request.QueryString["searchby"] })</th>
+            <th>Paid Amt</th>
+            <th>@Html.ActionLink("Working Day", "ReceiptIndex", new { sortby = ViewBag.SortWorkingDayIDParameter, searchby = Request.QueryString["searchby"] })</th>
+            <th>@Html.ActionLink("Working Month", "ReceiptIndex", new { sortby = ViewBag.SortWorkingMonthIDParameter, searchby = Request.QueryString["searchby"] })</th>
+            <th>@Html.ActionLink("Working Year", "ReceiptIndex", new { sortby = ViewBag.SortWorkingYearIDParameter, searchby = Request.QueryString["searchby"] })</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if(Model.Count() == 0)
+        {
+            <tr>
+                <td colspan="10" style="color:red"> No match found</td>
+            </tr>
+        }
+        else
+        {
+            foreach (var item in Model)
+            {
+            <tr>
+                <td>@item.ReceiptID</td>
+                <td>@item.ReceiptName</td>
+                <td>@item.PatientID</td>
+                <td>@item.ReceiptDate</td>
+                <td>@item.Purpose</td>
+                <td>@item.ReceiptAmount</td>
+                <td>@item.WorkingDayID</td>
+                <td>@item.WorkingMonthID</td>
+                <td>@item.WorkingYearID</td>
+                <td>
+                    @Html.ActionLink("Edit", "ReceiptEdit", new { id = item.ReceiptID}) |
+                    @Html.ActionLink("Details", "ReceiptDetails", new { id = item.ReceiptID }) |
+                    @Html.ActionLink("Delete", "ReceiptDelete", new { id = item.ReceiptID })
+                </td>
+            </tr>
+            }
+        }
+    </tbody>
+</table>
+@Html.PagedListPager(Model, page => Url.Action("ReceiptIndex", new { page, sortby = Request.QueryString["sortby"] }))

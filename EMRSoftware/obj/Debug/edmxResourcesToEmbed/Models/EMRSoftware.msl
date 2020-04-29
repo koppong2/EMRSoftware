@@ -1,0 +1,677 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EMRSoftwareModelStoreContainer" CdmEntityContainer="EMRSoftwareEntities1">
+    <EntitySetMapping Name="AgeGroups">
+      <EntityTypeMapping TypeName="EMRSoftwareModel.AgeGroup">
+        <MappingFragment StoreEntitySet="AgeGroup">
+          <ScalarProperty Name="AgeGroupID" ColumnName="AgeGroupID" />
+          <ScalarProperty Name="AgeGroupName" ColumnName="AgeGroupName" />
+          <ScalarProperty Name="AgeGroup1" ColumnName="AgeGroup1" />
+          <ScalarProperty Name="AgeGroup2" ColumnName="AgeGroup2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BillingGroups">
+      <EntityTypeMapping TypeName="EMRSoftwareModel.BillingGroup">
+        <MappingFragment StoreEntitySet="BillingGroup">
+          <ScalarProperty Name="BillingGroupID" ColumnName="BillingGroupID" />
+          <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+          <ScalarProperty Name="SponsorID" ColumnName="SponsorID" />
+          <ScalarProperty Name="SubSponsorID" ColumnName="SubSponsorID" />
+          <ScalarProperty Name="SponsorCategoryID" ColumnName="SponsorCategoryID" />
+          <ScalarProperty Name="InitialDependantID" ColumnName="InitialDependantID" />
+          <ScalarProperty Name="RelationID" ColumnName="RelationID" />
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+          <ScalarProperty Name="BillingGroup1" ColumnName="BillingGroup1" />
+          <ScalarProperty Name="BillingGroup2" ColumnName="BillingGroup2" />
+          <ScalarProperty Name="BillingGroup3" ColumnName="BillingGroup3" />
+          <ScalarProperty Name="BillingGroup4" ColumnName="BillingGroup4" />
+          <ScalarProperty Name="BillingGroup5" ColumnName="BillingGroup5" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Consultations">
+      <EntityTypeMapping TypeName="EMRSoftwareModel.Consultation">
+        <MappingFragment StoreEntitySet="Consultation">
+          <ScalarProperty Name="ConsultationID" ColumnName="ConsultationID" />
+          <ScalarProperty Name="ConsultationName" ColumnName="ConsultationName" />
+          <ScalarProperty Name="RegistrationCost" ColumnName="RegistrationCost" />
+          <ScalarProperty Name="ReviewCost" ColumnName="ReviewCost" />
+          <ScalarProperty Name="ConsultationCost" ColumnName="ConsultationCost" />
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+          <ScalarProperty Name="Consultation1" ColumnName="Consultation1" />
+          <ScalarProperty Name="Consultation2" ColumnName="Consultation2" />
+          <ScalarProperty Name="Consultation3" ColumnName="Consultation3" />
+          <ScalarProperty Name="Consultation4" ColumnName="Consultation4" />
+          <ScalarProperty Name="Consultation5" ColumnName="Consultation5" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ConsultReviews">
+      <EntityTypeMapping TypeName="EMRSoftwareModel.ConsultReview">
+        <MappingFragment StoreEntitySet="ConsultReview">
+          <ScalarProperty Name="ConsultReviewID" ColumnName="ConsultReviewID" />
+          <ScalarProperty Name="ConsultReviewName" ColumnName="ConsultReviewName" />
+          <ScalarProperty Name="ConsultReviewDate" ColumnName="ConsultReviewDate" />
+          <ScalarProperty Name="VisitationID" ColumnName="VisitationID" />
+          <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+          <ScalarProperty Name="SponsorID" ColumnName="SponsorID" />
+          <ScalarProperty Name="RevenueCenterID" ColumnName="RevenueCenterID" />
+          <ScalarProperty Name="WorkingYearID" ColumnName="WorkingYearID" />
+          <ScalarProperty Name="WorkingMonthID" ColumnName="WorkingMonthID" />
+          <ScalarProperty Name="WorkingDayID" ColumnName="WorkingDayID" />
+          <ScalarProperty Name="ConsultReview1" ColumnName="ConsultReview1" />
+          <ScalarProperty Name="ConsultReview2" ColumnName="ConsultReview2" />
+          <ScalarProperty Name="ConsultReview3" ColumnName="ConsultReview3" />
+          <ScalarProperty Name="ConsultReview4" ColumnName="ConsultReview4" />
+          <ScalarProperty Name="ConsultReview5" ColumnName="ConsultReview5" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Doctors">
+      <EntityTypeMapping TypeName="EMRSoftwareModel.Doctor">
+        <MappingFragment StoreEntitySet="Doctor">
+          <ScalarProperty Name="DoctorID" ColumnName="DoctorID" />
+          <ScalarProperty Name="DoctorName" ColumnName="DoctorName" />
+          <ScalarProperty Name="SpecialtyID" ColumnName="SpecialtyID" />
+          <ScalarProperty Name="Doctor1" ColumnName="Doctor1" />
+          <ScalarProperty Name="Doctor2" ColumnName="Doctor2" />
+          <ScalarProperty Name="Doctor3" ColumnName="Doctor3" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DrugCategories">
+      <EntityTypeMapping TypeName="EMRSoftwareModel.DrugCategory">
+        <MappingFragment StoreEntitySet="DrugCategory">
+          <ScalarProperty Name="DrugCategoryID" ColumnName="DrugCategoryID" />
+          <ScalarProperty Name="DrugCategoryName" ColumnName="DrugCategoryName" />
+          <ScalarProperty Name="DrugCategory1" ColumnName="DrugCategory1" />
+          <ScalarProperty Name="DrugCategory2" ColumnName="DrugCategory2" />
+          <ScalarProperty Name="DrugCategory3" ColumnName="DrugCategory3" />
+          <ScalarProperty Name="DrugCategory4" ColumnName="DrugCategory4" />
+          <ScalarProperty Name="DrugCategory5" ColumnName="DrugCategory5" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Drugs">
+      <EntityTypeMapping TypeName="EMRSoftwareModel.Drug">
+        <MappingFragment StoreEntitySet="Drugs">
+          <ScalarProperty Name="DrugID" ColumnName="DrugID" />
+          <ScalarProperty Name="DrugName" ColumnName="DrugName" />
+          <ScalarProperty Name="DrugCategoryID" ColumnName="DrugCategoryID" />
+          <ScalarProperty Name="DrugTypeID" ColumnName="DrugTypeID" />
+          <ScalarProperty Name="UnitCost" ColumnName="UnitCost" />
+          <ScalarProperty Name="Drug1" ColumnName="Drug1" />
+          <ScalarProperty Name="Drug2" ColumnName="Drug2" />
+          <ScalarProperty Name="Drug3" ColumnName="Drug3" />
+          <ScalarProperty Name="Drug4" ColumnName="Drug4" />
+          <ScalarProperty Name="Drug5" ColumnName="Drug5" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DrugSales">
+      <EntityTypeMapping TypeName="EMRSoftwareModel.DrugSale">
+        <MappingFragment StoreEntitySet="DrugSale">
+          <ScalarProperty Name="DrugSaleID" ColumnName="DrugSaleID" />
+          <ScalarProperty Name="DrugSaleDate" ColumnName="DrugSaleDate" />
+          <ScalarProperty Name="VisitationID" ColumnName="VisitationID" />
+          <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+          <ScalarProperty Name="SponsorID" ColumnName="SponsorID" />
+          <ScalarProperty Name="RevenueCenterID" ColumnName="RevenueCenterID" />
+          <ScalarProperty Name="DrugSale1" ColumnName="DrugSale1" />
+          <ScalarProperty Name="DrugSale2" ColumnName="DrugSale2" />
+          <ScalarProperty Name="DrugSale3" ColumnName="DrugSale3" />
+          <ScalarProperty Name="DrugSale4" ColumnName="DrugSale4" />
+          <ScalarProperty Name="DrugSale5" ColumnName="DrugSale5" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DrugTypes">
+      <EntityTypeMapping TypeName="EMRSoftwareModel.DrugType">
+        <MappingFragment StoreEntitySet="DrugType">
+          <ScalarProperty Name="DrugTypeID" ColumnName="DrugTypeID" />
+          <ScalarProperty Name="DrugTypeName" ColumnName="DrugTypeName" />
+          <ScalarProperty Name="DrugType1" ColumnName="DrugType1" />
+          <ScalarProperty Name="DrugType2" ColumnName="DrugType2" />
+          <ScalarProperty Name="DrugType3" ColumnName="DrugType3" />
+          <ScalarProperty Name="DrugType4" ColumnName="DrugType4" />
+          <ScalarProperty Name="DrugType5" ColumnName="DrugType5" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Genders">
+      <EntityTypeMapping TypeName="EMRSoftwareModel.Gender">
+        <MappingFragment StoreEntitySet="Gender">
+          <ScalarProperty Name="GenderID" ColumnName="GenderID" />
+          <ScalarProperty Name="GenderName" ColumnName="GenderName" />
+          <ScalarProperty Name="Gender1" ColumnName="Gender1" />
+          <ScalarProperty Name="Gender2" ColumnName="Gender2" />
+          <ScalarProperty Name="Gender3" ColumnName="Gender3" />
+          <ScalarProperty Name="Gender4" ColumnName="Gender4" />
+          <ScalarProperty Name="Gender5" ColumnName="Gender5" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IncomingDrugs">
+      <EntityTypeMapping TypeName="EMRSoftwareModel.IncomingDrug">
+        <MappingFragment StoreEntitySet="IncomingDrug">
+          <ScalarProperty Name="IncomingDrugID" ColumnName="IncomingDrugID" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="IncomingDrugDate" ColumnName="IncomingDrugDate" />
+          <ScalarProperty Name="WorkingYearID" ColumnName="WorkingYearID" />
+          <ScalarProperty Name="WorkingMonthID" ColumnName="WorkingMonthID" />
+          <ScalarProperty Name="WorkingDayID" ColumnName="WorkingDayID" />
+          <ScalarProperty Name="IncomingDrug1" ColumnName="IncomingDrug1" />
+          <ScalarProperty Name="IncomingDrug2" ColumnName="IncomingDrug2" />
+          <ScalarProperty Name="IncomingDrug3" ColumnName="IncomingDrug3" />
+          <ScalarProperty Name="IncomingDrug4" ColumnName="IncomingDrug4" />
+          <ScalarProperty Name="IncomingDrug5" ColumnName="IncomingDrug5" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IncomingItems">
+      <EntityTypeMapping TypeName="EMRSoftwareModel.IncomingItem">
+        <MappingFragment StoreEntitySet="IncomingItems">
+          <ScalarProperty Name="IncomingItemID" ColumnName="IncomingItemID" />
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="IncomingItemDate" ColumnName="IncomingItemDate" />
+          <ScalarProperty Name="WorkingYearID" ColumnName="WorkingYearID" />
+          <ScalarProperty Name="WorkingMonthID" ColumnName="WorkingMonthID" />
+          <ScalarProperty Name="WorkingDayID" ColumnName="WorkingDayID" />
+          <ScalarProperty Name="IncomingItem1" ColumnName="IncomingItem1" />
+          <ScalarProperty Name="IncomingItem2" ColumnName="IncomingItem2" />
+          <ScalarProperty Name="IncomingItem3" ColumnName="IncomingItem3" />
+          <ScalarProperty Name="IncomingItem4" ColumnName="IncomingItem4" />
+          <ScalarProperty Name="IncomingItem5" ColumnName="IncomingItem5" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InsuranceTypes">
+      <EntityTypeMapping TypeName="EMRSoftwareModel.InsuranceType">
+        <MappingFragment StoreEntitySet="InsuranceType">
+          <ScalarProperty Name="InsuranceTypeID" ColumnName="InsuranceTypeID" />
+          <ScalarProperty Name="InsuranceTypeName" ColumnName="InsuranceTypeName" />
+          <ScalarProperty Name="InsuranceType1" ColumnName="InsuranceType1" />
+          <ScalarProperty Name="InsuranceType2" ColumnName="InsuranceType2" />
+          <ScalarProperty Name="InsuranceType3" ColumnName="InsuranceType3" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InsuranceVals">
+      <EntityTypeMapping TypeName="EMRSoftwareModel.InsuranceVal">
+        <MappingFragment StoreEntitySet="InsuranceVal">
+          <ScalarProperty Name="InsuranceValID" ColumnName="InsuranceValID" />
+          <ScalarProperty Name="InsuranceValName" ColumnName="InsuranceValName" />
+          <ScalarProperty Name="InsuranceVal1" ColumnName="InsuranceVal1" />
+          <ScalarProperty Name="InsuranceVal2" ColumnName="InsuranceVal2" />
+          <ScalarProperty Name="InsuranceVal3" ColumnName="InsuranceVal3" />
+          <ScalarProperty Name="InsuranceVal4" ColumnName="InsuranceVal4" />
+          <ScalarProperty Name="InsuranceVal5" ColumnName="InsuranceVal5" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ItemCategories">
+      <EntityTypeMapping TypeName="EMRSoftwareModel.ItemCategory">
+        <MappingFragment StoreEntitySet="ItemCategory">
+          <ScalarProperty Name="ItemCategoryID" ColumnName="ItemCategoryID" />
+          <ScalarProperty Name="ItemCategoryName" ColumnName="ItemCategoryName" />
+          <ScalarProperty Name="ItemCategory1" ColumnName="ItemCategory1" />
+          <ScalarProperty Name="ItemCategory2" ColumnName="ItemCategory2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Items">
+      <EntityTypeMapping TypeName="EMRSoftwareModel.Item">
+        <MappingFragment StoreEntitySet="Items">
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+          <ScalarProperty Name="ItemName" ColumnName="ItemName" />
+          <ScalarProperty Name="ItemCategoryID" ColumnName="ItemCategoryID" />
+          <ScalarProperty Name="UnitCost" ColumnName="UnitCost" />
+          <ScalarProperty Name="Item1" ColumnName="Item1" />
+          <ScalarProperty Name="Item2" ColumnName="Item2" />
+          <ScalarProperty Name="Item3" ColumnName="Item3" />
+          <ScalarProperty Name="Item4" ColumnName="Item4" />
+          <ScalarProperty Name="Item5" ColumnName="Item5" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Patients">
+      <EntityTypeMapping TypeName="EMRSoftwareModel.Patient">
+        <MappingFragment StoreEntitySet="Patient">
+          <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+          <ScalarProperty Name="PatientName" ColumnName="PatientName" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="ResidentialAddress" ColumnName="ResidentialAddress" />
+          <ScalarProperty Name="postalAddress" ColumnName="postalAddress" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="dob" ColumnName="dob" />
+          <ScalarProperty Name="DateOfRegistration" ColumnName="DateOfRegistration" />
+          <ScalarProperty Name="NextOfKinName" ColumnName="NextOfKinName" />
+          <ScalarProperty Name="NextOfKinAdd" ColumnName="NextOfKinAdd" />
+          <ScalarProperty Name="PatientImage" ColumnName="PatientImage" />
+          <ScalarProperty Name="GenderID" ColumnName="GenderID" />
+          <ScalarProperty Name="Patient1" ColumnName="Patient1" />
+          <ScalarProperty Name="Patient2" ColumnName="Patient2" />
+          <ScalarProperty Name="Patient3" ColumnName="Patient3" />
+          <ScalarProperty Name="Patient4" ColumnName="Patient4" />
+          <ScalarProperty Name="Patient5" ColumnName="Patient5" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Receipts">
+      <EntityTypeMapping TypeName="EMRSoftwareModel.Receipt">
+        <MappingFragment StoreEntitySet="Receipt">
+          <ScalarProperty Name="ReceiptID" ColumnName="ReceiptID" />
+          <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+          <ScalarProperty Name="ReceiptDate" ColumnName="ReceiptDate" />
+          <ScalarProperty Name="ReceiptTypeID" ColumnName="ReceiptTypeID" />
+          <ScalarProperty Name="ReceiptTypeDetails" ColumnName="ReceiptTypeDetails" />
+          <ScalarProperty Name="ReceiptVal1" ColumnName="ReceiptVal1" />
+          <ScalarProperty Name="ReceiptVal2" ColumnName="ReceiptVal2" />
+          <ScalarProperty Name="ReceiptVal3" ColumnName="ReceiptVal3" />
+          <ScalarProperty Name="ReceiptVal4" ColumnName="ReceiptVal4" />
+          <ScalarProperty Name="ReceiptDate1" ColumnName="ReceiptDate1" />
+          <ScalarProperty Name="ReceiptDate2" ColumnName="ReceiptDate2" />
+          <ScalarProperty Name="ReceiptDate3" ColumnName="ReceiptDate3" />
+          <ScalarProperty Name="ReceiptDate4" ColumnName="ReceiptDate4" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ReceiptTypes">
+      <EntityTypeMapping TypeName="EMRSoftwareModel.ReceiptType">
+        <MappingFragment StoreEntitySet="ReceiptType">
+          <ScalarProperty Name="ReceiptTypeID" ColumnName="ReceiptTypeID" />
+          <ScalarProperty Name="ReceiptTypeName" ColumnName="ReceiptTypeName" />
+          <ScalarProperty Name="ReceiptType1" ColumnName="ReceiptType1" />
+          <ScalarProperty Name="ReceiptType2" ColumnName="ReceiptType2" />
+          <ScalarProperty Name="ReceiptType3" ColumnName="ReceiptType3" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Refunds">
+      <EntityTypeMapping TypeName="EMRSoftwareModel.Refund">
+        <MappingFragment StoreEntitySet="Refund">
+          <ScalarProperty Name="RefundID" ColumnName="RefundID" />
+          <ScalarProperty Name="ReceiptID" ColumnName="ReceiptID" />
+          <ScalarProperty Name="ReceiptVal1" ColumnName="ReceiptVal1" />
+          <ScalarProperty Name="ReceiptVal3" ColumnName="ReceiptVal3" />
+          <ScalarProperty Name="RefundAmount" ColumnName="RefundAmount" />
+          <ScalarProperty Name="RefundDate" ColumnName="RefundDate" />
+          <ScalarProperty Name="Refund1" ColumnName="Refund1" />
+          <ScalarProperty Name="Refund2" ColumnName="Refund2" />
+          <ScalarProperty Name="Refund3" ColumnName="Refund3" />
+          <ScalarProperty Name="Refund4" ColumnName="Refund4" />
+          <ScalarProperty Name="Refund5" ColumnName="Refund5" />
+          <ScalarProperty Name="RefundDate1" ColumnName="RefundDate1" />
+          <ScalarProperty Name="RefundDate2" ColumnName="RefundDate2" />
+          <ScalarProperty Name="RefundDate3" ColumnName="RefundDate3" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Regions">
+      <EntityTypeMapping TypeName="EMRSoftwareModel.Region">
+        <MappingFragment StoreEntitySet="Region">
+          <ScalarProperty Name="RegionID" ColumnName="RegionID" />
+          <ScalarProperty Name="RegionName" ColumnName="RegionName" />
+          <ScalarProperty Name="Region1" ColumnName="Region1" />
+          <ScalarProperty Name="Region2" ColumnName="Region2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Relations">
+      <EntityTypeMapping TypeName="EMRSoftwareModel.Relation">
+        <MappingFragment StoreEntitySet="Relation">
+          <ScalarProperty Name="RelationID" ColumnName="RelationID" />
+          <ScalarProperty Name="RelationName" ColumnName="RelationName" />
+          <ScalarProperty Name="Relation1" ColumnName="Relation1" />
+          <ScalarProperty Name="Relation2" ColumnName="Relation2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="RevenueCenters">
+      <EntityTypeMapping TypeName="EMRSoftwareModel.RevenueCenter">
+        <MappingFragment StoreEntitySet="RevenueCenter">
+          <ScalarProperty Name="RevenueCenterID" ColumnName="RevenueCenterID" />
+          <ScalarProperty Name="RevenueCenterName" ColumnName="RevenueCenterName" />
+          <ScalarProperty Name="RevenueCenter1" ColumnName="RevenueCenter1" />
+          <ScalarProperty Name="RevenueCenter2" ColumnName="RevenueCenter2" />
+          <ScalarProperty Name="RevenueCenter3" ColumnName="RevenueCenter3" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="EMRSoftwareModel.Role">
+        <MappingFragment StoreEntitySet="Role">
+          <ScalarProperty Name="RoleID" ColumnName="RoleID" />
+          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
+          <ScalarProperty Name="Role1" ColumnName="Role1" />
+          <ScalarProperty Name="Role2" ColumnName="Role2" />
+          <ScalarProperty Name="Role3" ColumnName="Role3" />
+          <ScalarProperty Name="Role4" ColumnName="Role4" />
+          <ScalarProperty Name="Role5" ColumnName="Role5" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Specialties">
+      <EntityTypeMapping TypeName="EMRSoftwareModel.Specialty">
+        <MappingFragment StoreEntitySet="Specialty">
+          <ScalarProperty Name="SpecialtyID" ColumnName="SpecialtyID" />
+          <ScalarProperty Name="SpecialtyName" ColumnName="SpecialtyName" />
+          <ScalarProperty Name="Specialty1" ColumnName="Specialty1" />
+          <ScalarProperty Name="Specialty2" ColumnName="Specialty2" />
+          <ScalarProperty Name="Specialty3" ColumnName="Specialty3" />
+          <ScalarProperty Name="Specialty4" ColumnName="Specialty4" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sponsors">
+      <EntityTypeMapping TypeName="EMRSoftwareModel.Sponsor">
+        <MappingFragment StoreEntitySet="Sponsor">
+          <ScalarProperty Name="SponsorID" ColumnName="SponsorID" />
+          <ScalarProperty Name="SponsorName" ColumnName="SponsorName" />
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="PostalAddress" ColumnName="PostalAddress" />
+          <ScalarProperty Name="InsuranceTypeID" ColumnName="InsuranceTypeID" />
+          <ScalarProperty Name="RegionID" ColumnName="RegionID" />
+          <ScalarProperty Name="ClaimsInfo" ColumnName="ClaimsInfo" />
+          <ScalarProperty Name="Sponsor1" ColumnName="Sponsor1" />
+          <ScalarProperty Name="Sponsor2" ColumnName="Sponsor2" />
+          <ScalarProperty Name="Sponsor3" ColumnName="Sponsor3" />
+          <ScalarProperty Name="Sponsor4" ColumnName="Sponsor4" />
+          <ScalarProperty Name="Sponsor5" ColumnName="Sponsor5" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SponsorCategories">
+      <EntityTypeMapping TypeName="EMRSoftwareModel.SponsorCategory">
+        <MappingFragment StoreEntitySet="SponsorCategory">
+          <ScalarProperty Name="SponsorCategoryID" ColumnName="SponsorCategoryID" />
+          <ScalarProperty Name="SponsorCategoryName" ColumnName="SponsorCategoryName" />
+          <ScalarProperty Name="SponsorID" ColumnName="SponsorID" />
+          <ScalarProperty Name="SubSponsorID" ColumnName="SubSponsorID" />
+          <ScalarProperty Name="SponsorCategory1" ColumnName="SponsorCategory1" />
+          <ScalarProperty Name="SponsorCategory2" ColumnName="SponsorCategory2" />
+          <ScalarProperty Name="SponsorCategory3" ColumnName="SponsorCategory3" />
+          <ScalarProperty Name="SponsorCategory4" ColumnName="SponsorCategory4" />
+          <ScalarProperty Name="SponsorCategory5" ColumnName="SponsorCategory5" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Staffs">
+      <EntityTypeMapping TypeName="EMRSoftwareModel.Staff">
+        <MappingFragment StoreEntitySet="Staff">
+          <ScalarProperty Name="StaffId" ColumnName="StaffId" />
+          <ScalarProperty Name="StaffName" ColumnName="StaffName" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+          <ScalarProperty Name="UnitId" ColumnName="UnitId" />
+          <ScalarProperty Name="Staff1" ColumnName="Staff1" />
+          <ScalarProperty Name="Staff2" ColumnName="Staff2" />
+          <ScalarProperty Name="Staff3" ColumnName="Staff3" />
+          <ScalarProperty Name="Staff4" ColumnName="Staff4" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Status">
+      <EntityTypeMapping TypeName="EMRSoftwareModel.Status">
+        <MappingFragment StoreEntitySet="Status">
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+          <ScalarProperty Name="StatusName" ColumnName="StatusName" />
+          <ScalarProperty Name="Status1" ColumnName="Status1" />
+          <ScalarProperty Name="Status2" ColumnName="Status2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SubSponsors">
+      <EntityTypeMapping TypeName="EMRSoftwareModel.SubSponsor">
+        <MappingFragment StoreEntitySet="SubSponsor">
+          <ScalarProperty Name="SubSponsorID" ColumnName="SubSponsorID" />
+          <ScalarProperty Name="SubSponsorName" ColumnName="SubSponsorName" />
+          <ScalarProperty Name="SponsorID" ColumnName="SponsorID" />
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="PhoneNo" ColumnName="PhoneNo" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="PostalAddress" ColumnName="PostalAddress" />
+          <ScalarProperty Name="RegionID" ColumnName="RegionID" />
+          <ScalarProperty Name="ClaimsInfo" ColumnName="ClaimsInfo" />
+          <ScalarProperty Name="SubSponsor1" ColumnName="SubSponsor1" />
+          <ScalarProperty Name="SubSponsor2" ColumnName="SubSponsor2" />
+          <ScalarProperty Name="SubSponsor3" ColumnName="SubSponsor3" />
+          <ScalarProperty Name="SubSponsor4" ColumnName="SubSponsor4" />
+          <ScalarProperty Name="SubSponsor5" ColumnName="SubSponsor5" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Suppliers">
+      <EntityTypeMapping TypeName="EMRSoftwareModel.Supplier">
+        <MappingFragment StoreEntitySet="Supplier">
+          <ScalarProperty Name="SupplierID" ColumnName="SupplierID" />
+          <ScalarProperty Name="SupplierName" ColumnName="SupplierName" />
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="phone" ColumnName="phone" />
+          <ScalarProperty Name="postalAddress" ColumnName="postalAddress" />
+          <ScalarProperty Name="supplier1" ColumnName="supplier1" />
+          <ScalarProperty Name="supplier2" ColumnName="supplier2" />
+          <ScalarProperty Name="supplier3" ColumnName="supplier3" />
+          <ScalarProperty Name="supplier4" ColumnName="supplier4" />
+          <ScalarProperty Name="supplier5" ColumnName="supplier5" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SystemUsers">
+      <EntityTypeMapping TypeName="EMRSoftwareModel.SystemUser">
+        <MappingFragment StoreEntitySet="SystemUser">
+          <ScalarProperty Name="systemUserId" ColumnName="systemUserId" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="StaffId" ColumnName="StaffId" />
+          <ScalarProperty Name="roleid" ColumnName="roleid" />
+          <ScalarProperty Name="statusId" ColumnName="statusId" />
+          <ScalarProperty Name="systemuser1" ColumnName="systemuser1" />
+          <ScalarProperty Name="systemuser2" ColumnName="systemuser2" />
+          <ScalarProperty Name="systemuser3" ColumnName="systemuser3" />
+          <ScalarProperty Name="systemuser4" ColumnName="systemuser4" />
+          <ScalarProperty Name="systemuser5" ColumnName="systemuser5" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Treatments">
+      <EntityTypeMapping TypeName="EMRSoftwareModel.Treatment">
+        <MappingFragment StoreEntitySet="Treatment">
+          <ScalarProperty Name="TreatmentID" ColumnName="TreatmentID" />
+          <ScalarProperty Name="TreatmentName" ColumnName="TreatmentName" />
+          <ScalarProperty Name="UnitCost" ColumnName="UnitCost" />
+          <ScalarProperty Name="StatusID" ColumnName="StatusID" />
+          <ScalarProperty Name="Treatment1" ColumnName="Treatment1" />
+          <ScalarProperty Name="Treatment2" ColumnName="Treatment2" />
+          <ScalarProperty Name="Treatment3" ColumnName="Treatment3" />
+          <ScalarProperty Name="Treatment4" ColumnName="Treatment4" />
+          <ScalarProperty Name="Treatment5" ColumnName="Treatment5" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Units">
+      <EntityTypeMapping TypeName="EMRSoftwareModel.Unit">
+        <MappingFragment StoreEntitySet="Unit">
+          <ScalarProperty Name="UnitId" ColumnName="UnitId" />
+          <ScalarProperty Name="UnitName" ColumnName="UnitName" />
+          <ScalarProperty Name="Unit1" ColumnName="Unit1" />
+          <ScalarProperty Name="Unit2" ColumnName="Unit2" />
+          <ScalarProperty Name="Unit3" ColumnName="Unit3" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Visitations">
+      <EntityTypeMapping TypeName="EMRSoftwareModel.Visitation">
+        <MappingFragment StoreEntitySet="Visitation">
+          <ScalarProperty Name="VisitationID" ColumnName="VisitationID" />
+          <ScalarProperty Name="VisitationName" ColumnName="VisitationName" />
+          <ScalarProperty Name="VisitTypeID" ColumnName="VisitTypeID" />
+          <ScalarProperty Name="VisitDate" ColumnName="VisitDate" />
+          <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+          <ScalarProperty Name="SponsorID" ColumnName="SponsorID" />
+          <ScalarProperty Name="SubSponsorID" ColumnName="SubSponsorID" />
+          <ScalarProperty Name="SpecialtyID" ColumnName="SpecialtyID" />
+          <ScalarProperty Name="ConsultationID" ColumnName="ConsultationID" />
+          <ScalarProperty Name="DoctorID" ColumnName="DoctorID" />
+          <ScalarProperty Name="BillingGroupID" ColumnName="BillingGroupID" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="AgeGroupID" ColumnName="AgeGroupID" />
+          <ScalarProperty Name="InsuranceTypeID" ColumnName="InsuranceTypeID" />
+          <ScalarProperty Name="InsuranceValID" ColumnName="InsuranceValID" />
+          <ScalarProperty Name="Cost" ColumnName="Cost" />
+          <ScalarProperty Name="copayAmt" ColumnName="copayAmt" />
+          <ScalarProperty Name="VisitStatusID" ColumnName="VisitStatusID" />
+          <ScalarProperty Name="RevenueCenterID" ColumnName="RevenueCenterID" />
+          <ScalarProperty Name="WorkingYearID" ColumnName="WorkingYearID" />
+          <ScalarProperty Name="WorkingMonthID" ColumnName="WorkingMonthID" />
+          <ScalarProperty Name="WorkingDayID" ColumnName="WorkingDayID" />
+          <ScalarProperty Name="Vistation1" ColumnName="Vistation1" />
+          <ScalarProperty Name="Vistation2" ColumnName="Vistation2" />
+          <ScalarProperty Name="Vistation3" ColumnName="Vistation3" />
+          <ScalarProperty Name="Vistation4" ColumnName="Vistation4" />
+          <ScalarProperty Name="Vistation5" ColumnName="Vistation5" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VisitStatus">
+      <EntityTypeMapping TypeName="EMRSoftwareModel.VisitStatu">
+        <MappingFragment StoreEntitySet="VisitStatus">
+          <ScalarProperty Name="VisitStatusID" ColumnName="VisitStatusID" />
+          <ScalarProperty Name="VisitStatusName" ColumnName="VisitStatusName" />
+          <ScalarProperty Name="VisitStatus1" ColumnName="VisitStatus1" />
+          <ScalarProperty Name="VisitStatus2" ColumnName="VisitStatus2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VisitTypes">
+      <EntityTypeMapping TypeName="EMRSoftwareModel.VisitType">
+        <MappingFragment StoreEntitySet="VisitType">
+          <ScalarProperty Name="VisitTypeID" ColumnName="VisitTypeID" />
+          <ScalarProperty Name="VisitTypeName" ColumnName="VisitTypeName" />
+          <ScalarProperty Name="VisitType1" ColumnName="VisitType1" />
+          <ScalarProperty Name="VisitType2" ColumnName="VisitType2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkingDays">
+      <EntityTypeMapping TypeName="EMRSoftwareModel.WorkingDay">
+        <MappingFragment StoreEntitySet="WorkingDay">
+          <ScalarProperty Name="WorkingDayID" ColumnName="WorkingDayID" />
+          <ScalarProperty Name="WorkingDayName" ColumnName="WorkingDayName" />
+          <ScalarProperty Name="WorkingDay1" ColumnName="WorkingDay1" />
+          <ScalarProperty Name="WorkingDay2" ColumnName="WorkingDay2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkingMonths">
+      <EntityTypeMapping TypeName="EMRSoftwareModel.WorkingMonth">
+        <MappingFragment StoreEntitySet="WorkingMonth">
+          <ScalarProperty Name="WorkingMonthID" ColumnName="WorkingMonthID" />
+          <ScalarProperty Name="WorkingMonthName" ColumnName="WorkingMonthName" />
+          <ScalarProperty Name="WorkingMonth1" ColumnName="WorkingMonth1" />
+          <ScalarProperty Name="WorkingMonth2" ColumnName="WorkingMonth2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="WorkingYears">
+      <EntityTypeMapping TypeName="EMRSoftwareModel.WorkingYear">
+        <MappingFragment StoreEntitySet="WorkingYear">
+          <ScalarProperty Name="WorkingYearID" ColumnName="WorkingYearID" />
+          <ScalarProperty Name="WorkingYearName" ColumnName="WorkingYearName" />
+          <ScalarProperty Name="WorkingYear1" ColumnName="WorkingYear1" />
+          <ScalarProperty Name="WorkingYear2" ColumnName="WorkingYear2" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DrugSaleItems">
+      <EntityTypeMapping TypeName="EMRSoftwareModel.DrugSaleItem">
+        <MappingFragment StoreEntitySet="DrugSaleItems">
+          <ScalarProperty Name="DrugSaleID" ColumnName="DrugSaleID" />
+          <ScalarProperty Name="DrugID" ColumnName="DrugID" />
+          <ScalarProperty Name="VisitationID" ColumnName="VisitationID" />
+          <ScalarProperty Name="PatientID" ColumnName="PatientID" />
+          <ScalarProperty Name="unitCost" ColumnName="unitCost" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="FinalAmt" ColumnName="FinalAmt" />
+          <ScalarProperty Name="InsuranceTypeID" ColumnName="InsuranceTypeID" />
+          <ScalarProperty Name="InsuranceValID" ColumnName="InsuranceValID" />
+          <ScalarProperty Name="DispenseDate" ColumnName="DispenseDate" />
+          <ScalarProperty Name="WorkingYearID" ColumnName="WorkingYearID" />
+          <ScalarProperty Name="WorkingMonthID" ColumnName="WorkingMonthID" />
+          <ScalarProperty Name="WorkingDayID" ColumnName="WorkingDayID" />
+          <ScalarProperty Name="DispenseDate1" ColumnName="DispenseDate1" />
+          <ScalarProperty Name="DispenseDate2" ColumnName="DispenseDate2" />
+          <ScalarProperty Name="DispenseDate3" ColumnName="DispenseDate3" />
+          <ScalarProperty Name="DrugSaleItems1" ColumnName="DrugSaleItems1" />
+          <ScalarProperty Name="DrugSaleItems2" ColumnName="DrugSaleItems2" />
+          <ScalarProperty Name="DrugSaleItems3" ColumnName="DrugSaleItems3" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IncomingDrugItems">
+      <EntityTypeMapping TypeName="EMRSoftwareModel.IncomingDrugItem">
+        <MappingFragment StoreEntitySet="IncomingDrugItems">
+          <ScalarProperty Name="IncomingDrugID" ColumnName="IncomingDrugID" />
+          <ScalarProperty Name="DrugID" ColumnName="DrugID" />
+          <ScalarProperty Name="UnitCost" ColumnName="UnitCost" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="FinalAmt" ColumnName="FinalAmt" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="WorkingYearID" ColumnName="WorkingYearID" />
+          <ScalarProperty Name="WorkingMonthID" ColumnName="WorkingMonthID" />
+          <ScalarProperty Name="WorkingDayID" ColumnName="WorkingDayID" />
+          <ScalarProperty Name="IncomingDrugItems1" ColumnName="IncomingDrugItems1" />
+          <ScalarProperty Name="IncomingDrugItems2" ColumnName="IncomingDrugItems2" />
+          <ScalarProperty Name="IncomingDrugItems3" ColumnName="IncomingDrugItems3" />
+          <ScalarProperty Name="IncomingDrugItems4" ColumnName="IncomingDrugItems4" />
+          <ScalarProperty Name="IncomingDrugItems5" ColumnName="IncomingDrugItems5" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IncomingItemsDetails">
+      <EntityTypeMapping TypeName="EMRSoftwareModel.IncomingItemsDetail">
+        <MappingFragment StoreEntitySet="IncomingItemsDetail">
+          <ScalarProperty Name="IncomingItemID" ColumnName="IncomingItemID" />
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+          <ScalarProperty Name="UnitCost" ColumnName="UnitCost" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="FinalAmt" ColumnName="FinalAmt" />
+          <ScalarProperty Name="EntryDate" ColumnName="EntryDate" />
+          <ScalarProperty Name="WorkingYearID" ColumnName="WorkingYearID" />
+          <ScalarProperty Name="WorkingMonthID" ColumnName="WorkingMonthID" />
+          <ScalarProperty Name="WorkingDayID" ColumnName="WorkingDayID" />
+          <ScalarProperty Name="IncomingItemsDetail1" ColumnName="IncomingItemsDetail1" />
+          <ScalarProperty Name="IncomingItemsDetail2" ColumnName="IncomingItemsDetail2" />
+          <ScalarProperty Name="IncomingItemsDetail3" ColumnName="IncomingItemsDetail3" />
+          <ScalarProperty Name="IncomingItemsDetail4" ColumnName="IncomingItemsDetail4" />
+          <ScalarProperty Name="IncomingItemsDetail5" ColumnName="IncomingItemsDetail5" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Services">
+      <EntityTypeMapping TypeName="EMRSoftwareModel.Service">
+        <MappingFragment StoreEntitySet="Services">
+          <ScalarProperty Name="TreamentID" ColumnName="TreamentID" />
+          <ScalarProperty Name="ConsultReviewID" ColumnName="ConsultReviewID" />
+          <ScalarProperty Name="VisitationID" ColumnName="VisitationID" />
+          <ScalarProperty Name="UnitCost" ColumnName="UnitCost" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="FinalAmt" ColumnName="FinalAmt" />
+          <ScalarProperty Name="WorkingYearID" ColumnName="WorkingYearID" />
+          <ScalarProperty Name="WorkingMonthID" ColumnName="WorkingMonthID" />
+          <ScalarProperty Name="WorkingDayID" ColumnName="WorkingDayID" />
+          <ScalarProperty Name="Service1" ColumnName="Service1" />
+          <ScalarProperty Name="Service2" ColumnName="Service2" />
+          <ScalarProperty Name="Service3" ColumnName="Service3" />
+          <ScalarProperty Name="Service4" ColumnName="Service4" />
+          <ScalarProperty Name="Service5" ColumnName="Service5" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

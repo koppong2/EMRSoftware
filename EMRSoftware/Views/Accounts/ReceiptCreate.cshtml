@@ -1,0 +1,189 @@
+﻿@model EMRSoftware.Models.Receipt
+
+@{
+    ViewBag.Title = "CreateReceipt";
+
+}
+
+
+<h2>Create Receipt</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.ReceiptID, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.ReceiptID, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @Value = ViewBag.NewReceiptNo } })
+            @Html.ValidationMessageFor(model => model.ReceiptID, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ManualReceipt, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.ManualReceipt, new { htmlAttributes = new { @class = "form-control", @Value = "-" } })
+            @Html.ValidationMessageFor(model => model.ManualReceipt, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.PatientID, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.PatientID, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.PatientID, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="ReceiptNameInfo">
+        <div class="form-group">
+            @Html.LabelFor(model => model.ReceiptName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ReceiptName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ReceiptName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ReceiptTypeID, "ReceiptTypeID", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.ReceiptTypeID, (IEnumerable<SelectListItem>)ViewBag.ReceiptTypeIDList, "", new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.ReceiptTypeID, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div id="ChequeInfo">
+        <div class="form-group">
+            @Html.LabelFor(model => model.BankName, "Bank Name", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.BankName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.BankName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ChequeNo, "Cheque No", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ChequeNo, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ChequeNo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.ChequeDetails, "Cheque Details", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ChequeDetails, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ChequeDetails, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.ChequeDate, "Cheque Date", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ChequeDate, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.ChequeDate, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.ReceiptAmount, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.ReceiptAmount, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.ReceiptAmount, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Purpose, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Purpose, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Purpose, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "ReceiptIndex")
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+    <script>
+        $(function () {
+            $("#PatientID").autocomplete(
+                {
+                source: function (request, response)
+                {
+                    $.ajax({
+                        url: '@Url.Action("AutoCompletePatientID", "Records")',
+                        type: "POST",
+                        dataType: "json",
+                        data: { term: request.term },
+                        success: function (data) {
+                            response($.map(data, function (item) {
+                                return {
+                                    label: item.PatientFolderName,
+                                    value: item.FolderID
+                                };
+                            }))
+                        }
+                    })
+                },
+                messages: {
+                    noResults: "", results: ""
+                },
+                select: function (event, ui)
+                {
+                    $(this).val(ui.item.label);
+                    var folderId = "#PatientFolderID" + (this.id).substring("FolderNumber".length);
+                    $(folderId).val(ui.item.value);
+                    return false;
+                },
+                minLength: 3
+            });
+        });
+
+        $(document).ready(function () {
+            $("#ChequeInfo").hide();
+           // $("#ChequeDetails").hide();
+            //$("#ChequeDate").hide();
+            $("#ReceiptTypeID").change(function () {
+                var holdReceiptTypeID = $("#ReceiptTypeID").val();
+                if (holdReceiptTypeID.toUpperCase() != "CASH" && holdReceiptTypeID != "RT001") {
+                    $("#ChequeInfo").show();
+                    // $("#ChequeDetails").hide();
+                    //$("#ChequeDate").hide();
+                    $("#ChequeDate").datepicker();
+                }
+                else {
+                    $("#ChequeInfo").hide();
+                    
+                }
+            })
+        });
+
+        $(document).ready(function () {
+            $(".ReceiptNameInfo").hide();
+            $("#PatientID").change(function () {
+                var patID = $("#PatientID").val().toString();
+                if (patID.includes("P1")) {
+                    $(".ReceiptNameInfo").show();
+                }
+                else $(".ReceiptNameInfo").hide();
+            });
+        });
+    </script>
+}
+
+

@@ -1,0 +1,220 @@
+﻿@model EMRSoftware.Models.Patient
+
+@{
+    ViewBag.Title = "PatientCreate";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var ImagePath = "~/Image/male.JPG";
+}
+
+
+<h2>Create Patient</h2>
+
+@if (null != TempData["ErrorMessage"])
+{
+    <script type="text/javascript">
+        alert("@TempData["ErrorMessage"]");
+    </script>
+}
+@using (Html.BeginForm("PatientCreate", "Records", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ImagePath, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <!-- <input type="text" class="form-control" name="ImageFile" readonly="readonly" id="ImagePath-textbox" /> -->
+                <img src=@Url.Content(ImagePath) width="150" height="150" id="picture" />
+                <input align="right" name="ImageFile" type="file" id="FileUpload" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PatientID, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PatientID, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @Value = @ViewBag.PatientID } })
+                @Html.ValidationMessageFor(model => model.PatientID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PatientName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PatientName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PatientName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.PhoneNo, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.PhoneNo, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.PhoneNo, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.ResidentialAddress, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.ResidentialAddress, new { htmlAttributes = new { @class = "form-control", @Value = "-" } })
+                @Html.ValidationMessageFor(model => model.ResidentialAddress, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.postalAddress, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.postalAddress, new { htmlAttributes = new { @class = "form-control", @Value = "-" } })
+                @Html.ValidationMessageFor(model => model.postalAddress, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.dob, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.dob, new { htmlAttributes = new { @class = "form-control", id = "datepicker" } })
+                @Html.ValidationMessageFor(model => model.dob, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Age, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Age, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", id = "age" } })
+                @Html.ValidationMessageFor(model => model.Age, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DateOfRegistration, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DateOfRegistration, new { htmlAttributes = new { @class = "form-control", @Value = DateTime.Now, @readonly = "readonly" } })
+                @Html.ValidationMessageFor(model => model.DateOfRegistration, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NextOfKinName, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NextOfKinName, new { htmlAttributes = new { @class = "form-control", @Value = "-" } })
+                @Html.ValidationMessageFor(model => model.NextOfKinName, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.NextOfKinAdd, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NextOfKinAdd, new { htmlAttributes = new { @class = "form-control", @Value = "-" } })
+                @Html.ValidationMessageFor(model => model.NextOfKinAdd, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.GenderID, "GenderID", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => Model.GenderID, (IEnumerable<SelectListItem>)ViewBag.Dropdownlist, "Select Gender", new { htmlAttributes = new { @class = "form-control" } })
+                @**Html.DropDownListFor(m=>m.GenderID, (IEnumerable<SelectListItem>)ViewBag.Dropdownlist, "Select Gender") **@
+                @Html.ValidationMessageFor(model => model.GenderID, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <!--
+
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Patient2, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Patient2, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Patient2, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Patient3, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Patient3, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Patient3, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Patient4, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Patient4, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Patient4, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Patient5, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Patient5, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Patient5, "", new { @class = "text-danger" })
+                </div>
+            </div>
+    -->
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create Patient" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "PatientIndex", "Records")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+    <script>
+        $(function () {
+            $("#datepicker").datepicker();
+        });
+
+        $(function () {
+            $('#datepicker').change(function () {
+               // alert("" + $("#datepicker").val());
+
+                var g = $("#datepicker").val();
+                var dateOfBirth = new Date(g.toString());
+                var a = $.datepicker.formatDate('mm/dd/yy', new Date());
+                var currentDate = new Date(a.toString());
+                var total1 = (dateOfBirth.getFullYear() * 12) + dateOfBirth.getMonth();
+                var total2 = (currentDate.getFullYear() * 12) + currentDate.getMonth();
+                var age = parseInt((total2 - total1) / 12) + "." + ((total2 - total1) % 12);
+                $("#age").val(age);
+            });
+        });
+
+        $(function () {
+            $("#FileUpload").change(function () {
+                var g = $("#FileUpload").val();
+                var filename="";
+               // alert("" + g);
+                if (g.includes("C:\\fakepath\\"))
+                {
+                    filename = g.replace("C:\\fakepath\\", "");
+                    filename = filename.trim();
+                    //alert("" + filename);
+                    document.getElementById('picture').src = "/Image/" + filename;
+                }
+
+            });
+        });
+
+    </script>
+}

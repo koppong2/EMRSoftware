@@ -1,0 +1,122 @@
+﻿@model EMRSoftware.Models.Patient
+
+@{
+    ViewBag.Title = "Patient Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Patient Details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            <label>Image</label>
+        </dt>
+
+        <dd>
+            <img src="@Url.Content(Model.ImagePath)" width="150" height="150" />
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Gender.GenderName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gender.GenderName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PatientName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PatientName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PhoneNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PhoneNo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ResidentialAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ResidentialAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.postalAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.postalAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dob)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dob)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateOfRegistration)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateOfRegistration)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NextOfKinName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NextOfKinName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NextOfKinAdd)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NextOfKinAdd)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ImagePath)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ImagePath)
+        </dd>
+
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Age)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Age)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @**Html.ActionLink("Edit", "Edit", new { id = Model.PatientID }) | **@
+    @Html.ActionLink("Back to List", "PatientIndex")
+</p>

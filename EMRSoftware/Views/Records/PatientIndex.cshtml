@@ -1,0 +1,63 @@
+﻿@model IPagedList<EMRSoftware.Models.Patient>
+@using PagedList;
+@using PagedList.Mvc;
+@using System.Linq
+
+@{
+    ViewBag.Title = "Patient List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Patient List</h2>
+
+<p>
+    @Html.ActionLink("Create New", "PatientCreate","Records")
+</p>
+<div align="right">
+    @using (Html.BeginForm("PatientIndex", "Records", FormMethod.Get))
+    {
+        <input type="text" style="height:40px; width:250px" id="searching" name="searching" /> <input type="submit" value="Search" style="background-color:blue;border:black 2px solid;width:120px;height:40px" />
+    }
+</div>
+<br/>
+<table class="table table-striped">
+    <thead>
+        <tr style="background-color:darkgray">
+            <th> @Html.ActionLink("Patient ID","PatientIndex", new { sortby = ViewBag.SortIDParameter, searchby = Request.QueryString["searchby"] })</th>
+            <th>@Html.ActionLink("Patient Name", "PatientIndex", new { sortby = ViewBag.SortNameParameter, searchby = Request.QueryString["searchby"] })</th>
+            <th>@Html.ActionLink("Phone No", "PatientIndex", new { sortby = ViewBag.SortPhoneNoParameter, searchby = Request.QueryString["searchby"] })</th>
+            <th>Residential Address</th>
+            <th>Email</th>
+            <th>@Html.ActionLink("Date of Birth", "PatientIndex", new { sortby = ViewBag.SortDobParameter, searchby = Request.QueryString["searchby"] })</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model == null)
+        {
+            <tr>
+                <td colspan="7" style="color:red"> No match found</td>
+            </tr>
+        }
+        else
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.PatientID</td>
+                    <td>@item.PatientName</td>
+                    <td>@item.PhoneNo</td>
+                    <td>@item.ResidentialAddress</td>
+                    <td>@item.Email</td>
+                    <td>@item.dob</td>
+                    <td>
+                        @Html.ActionLink("Edit", "PatientEdit", new { id = item.PatientID }) |
+                        @Html.ActionLink("Details", "PatientDetails", new { id = item.PatientID }) |
+                        @Html.ActionLink("Delete", "PatientDelete", new { id = item.PatientID })
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+@Html.PagedListPager(Model,page=> Url.Action("PatientIndex",new { page,sortby= Request.QueryString["sortby"]}))

@@ -1,0 +1,197 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <title>@ViewBag.Title - EasyEMR </title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <!-- <link rel="stylesheet" href="dist/css/bootstrap-submenu.css"> -->
+    <link href="~/Content/themes/base/jquery-ui.min.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="MyNavbar"> 
+        <div class="MyDropDown">
+            <ul>
+                <!--  RECORDS -->
+                <li class="MenuItem">
+                    <a href="#" class="glyphicon glyphicon-book"> RECORDS <span class="caret"></span></a>
+                    <ul class="MenuItem-content">
+                        <li>
+                            <a href="#">Visit</a>
+                            <ul class="submenu">
+                                <li>@Html.ActionLink("Visit List","VisitationIndex","Records")</li>
+                                <li>@Html.ActionLink("Add Visit", "VisitationCreate", "Records")</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Patient</a>
+                            <ul class="submenu">
+                                <li>@Html.ActionLink("Patient List", "PatientIndex", "Records")</li>
+                                <li>@Html.ActionLink("Add Patient", "PatientCreate", "Records")</li>
+                                
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Billing Group</a>
+                            <ul class="submenu">
+                                <li><a>@Html.ActionLink("List", "BillingGroupIndex", "Records")</a></li>
+                                <li><a>@Html.ActionLink("Add", "BillingGroupCreate", "Records")</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Sponsor</a>
+                            <ul class="submenu">
+                                <li><a>@Html.ActionLink("List", "SponsorIndex", "Records")</a></li>
+                                <li><a>@Html.ActionLink("Add", "SponsorCreate", "Records")</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <!--  ACCOUNTS -->
+                <li class="MenuItem">
+                    <a href="#" class="glyphicon glyphicon-credit-card"> ACCOUNTS <span class="caret"></span></a>
+                    <ul class="MenuItem-content">
+                        <li>
+                            <a href="#">Receipt</a>
+                            <ul class="submenu">
+                                <li>@Html.ActionLink("List","ReceiptIndex","Accounts")</li>
+                                <li>@Html.ActionLink("Add", "ReceiptCreate", "Accounts")</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Refund</a>
+                            <ul class="submenu">
+                                <li><a>Add Refund</a></li>
+                                <li><a>Search Refund</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Reports</a>
+                            <ul class="submenu">
+                                <li><a>***</a></li>
+                                <li><a>***</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+
+                <!--  NURSING -->
+                <li class="MenuItem">
+                    <a href="#" class="glyphicon glyphicon-user"> NURSING <span class="caret"></span></a>
+                    <ul class="MenuItem-content">
+                        <li>
+                            <a href="#">Receipt</a>
+                            <ul class="submenu">
+                                <li><a>Add Receipt</a></li>
+                                <li><a>Search Receipt</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Refund</a>
+                            <ul class="submenu">
+                                <li><a>Add Refund</a></li>
+                                <li><a>Search Refund</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Reports</a>
+                            <ul class="submenu">
+                                <li><a>***</a></li>
+                                <li><a>***</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+
+                <!--  DOCTOR -->
+                <li class="MenuItem">
+                    <a class="glyphicon glyphicon-certificate" href="#"> DOCTOR <span class="caret"></span></a>
+                    <ul class="MenuItem-content">
+                        <li>
+                            <a href="#">Receipt</a>
+                            <ul class="submenu">
+                                <li><a>Add Receipt</a></li>
+                                <li><a>Search Receipt</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Refund</a>
+                            <ul class="submenu">
+                                <li><a>Add Refund</a></li>
+                                <li><a>Search Refund</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Reports</a>
+                            <ul class="submenu">
+                                <li><a>***</a></li>
+                                <li><a>***</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+
+                <!--  STORES -->
+                <li class="MenuItem">
+                    <a class="glyphicon glyphicon-collapse-down" href="#">  STORES <span class="caret"></span></a>
+                    <ul class="MenuItem-content">
+                        <li>
+                            <a href="#">Items</a>
+                            <ul class="submenu">
+                                <li><a>Add Item</a></li>
+                                <li><a>Search Item</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Adjustments</a>
+                            <ul class="submenu">
+                                <li><a>new adjustment</a></li>
+                                <li><a>Search Adjustment</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#">Reports</a>
+                            <ul class="submenu">
+                                <li><a>***</a></li>
+                                <li><a>***</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+
+                <!--  INFO -->
+                <li class="MenuItem">
+                    <a class="glyphicon glyphicon-bell" href="#"> INFO <span class="caret"></span></a>
+                    <ul class="MenuItem-content">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li>@Html.ActionLink("About", "About", "Home")</li>
+                        <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+    </div>  
+
+    <div class="container body-content">
+
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - EasyEMR </p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

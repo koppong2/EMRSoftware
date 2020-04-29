@@ -1,0 +1,72 @@
+﻿@model IPagedList<EMRSoftware.Models.Visitation>
+@using PagedList;
+@using PagedList.Mvc;
+@using System.Linq
+
+@{
+    ViewBag.Title = "VisitationIndex";
+}
+
+<h2>Visit List</h2>
+
+<p>
+    @Html.ActionLink("Create New", "VisitationCreate")
+</p>
+
+<div align="right">
+    @using (Html.BeginForm("VisitationIndex", "Records", FormMethod.Get))
+    {
+        <input type="text" style="height:40px; width:250px" id="searching" name="searching" /> <input type="submit" value="Search" style="background-color:blue;border:black 2px solid;width:120px;height:40px" />
+    }
+</div>
+<br />
+
+<table class="table">
+    <thead>
+        <tr style="background-color:darkgray">
+            <th> @Html.ActionLink("VisitationID", "VisitationIndex", new { sortby = ViewBag.SortIDParameter, searchby = Request.QueryString["searchby"] })</th>
+            <th>@Html.ActionLink("Patient Name", "VisitationIndex", new { sortby = ViewBag.SortPatientNameParameter, searchby = Request.QueryString["searchby"] })</th>
+            <th>@Html.ActionLink("Hosp. No", "VisitationIndex", new { sortby = ViewBag.SortPatientIDParameter, searchby = Request.QueryString["searchby"] })</th>
+            <th>Doctor's Name</th>
+            <th>Specialty</th>
+            <th>Sponsor</th>
+            <th>@Html.ActionLink("Working Month", "VisitationIndex", new { sortby = ViewBag.SortWorkingMonthParameter, searchby = Request.QueryString["searchby"] })</th>
+            <th>@Html.ActionLink("VisitDate", "VisitationIndex", new { sortby = ViewBag.SortVisitDateParameter, searchby = Request.QueryString["searchby"] })</th>
+            <th>Cost</th>
+            <th></th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @if (Model.Count() == 0)
+        {
+            <tr>
+                <td colspan="9" style="color:red"> No match found</td>
+            </tr>
+        }
+        else
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.VisitationID</td>
+                    <td>@item.VisitationName</td>
+                    <td>@item.PatientID</td>
+                    <td>@item.Doctor.DoctorName</td>
+                    <td>@item.Specialty.SpecialtyName</td>
+                    <td>@item.Sponsor.SponsorName</td>
+                    <td>@item.WorkingMonth.WorkingMonthName</td>
+                    <td>@item.VisitDate</td>
+                    <td>@item.Cost</td>
+                    <td>
+                        @Html.ActionLink("Edit", "VisitationEdit", new { id = item.VisitationID }) |
+                        @Html.ActionLink("Details", "VisitationDetails", new { id = item.VisitationID }) |
+                        @Html.ActionLink("Delete", "VisitationDelete", new { id = item.VisitationID })
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+
+</table>
+@Html.PagedListPager(Model, page => Url.Action("VisitationIndex", new { page, sortby = Request.QueryString["sortby"] }))

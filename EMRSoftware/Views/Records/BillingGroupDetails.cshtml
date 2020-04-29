@@ -1,0 +1,127 @@
+﻿@model EMRSoftware.Models.BillingGroup
+
+
+@{
+    /**/
+
+    ViewBag.Title = "BillingGroupDetails";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Billing Group </h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Patient.PatientName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Patient.PatientName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Relation.RelationName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Relation.RelationName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sponsor.SponsorName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sponsor.SponsorName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SponsorCategory.SponsorCategoryName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SponsorCategory.SponsorCategoryName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Status.StatusName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Status.StatusName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubSponsor.SubSponsorName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubSponsor.SubSponsorName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InitialDependantID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InitialDependantID)
+        </dd>
+
+
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "BillingGroupEdit", new { id = Model.BillingGroupID }) |
+    @Html.ActionLink("Back to List", "BillingGroupIndex")
+</p>
+
+
+@if (Model.InitialDependantID == "NONE" && ViewBag.DependantBillGrp.Count != 0)
+{   <br /><br />
+    <h3>Dependants List</h3>
+    <table class="table table-striped">
+        <thead>
+            <tr style="background-color:darkgray">
+                <th> Main Account</th>
+                <th>Hosp. No</th>
+                <th>Sponsor Name</th>
+                <th>Sub Sponsor Name</th>
+                <th>Status Name</th>
+                <th>Initial Dependant ID</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (ViewBag.DependantBillGrp.Count == 0)
+            {
+                <tr>
+                    <td colspan="7" style="color:red"> No match found</td>
+                </tr>
+            }
+            else
+            {
+                foreach (var item in ViewBag.DependantBillGrp)
+                {
+                    <tr>
+                        <td>@item.BillingGroupID</td>
+                        <td>@item.PatientID</td>
+                        <td>@item.Sponsor.SponsorName</td>
+                        <td>@item.SubSponsor.SubSponsorName</td>
+                        <td>@item.Status.StatusName</td>
+                        <td>@item.InitialDependantID</td>
+                        <td>
+                            @Html.ActionLink("Edit", "BillingGroupEdit", new { id = item.BillingGroupID }) |
+                            @Html.ActionLink("Details", "BillingGroupDetails", new { id = item.BillingGroupID }) |
+                            @Html.ActionLink("Delete", "BillingGroupDelete", new { id = item.BillingGroupID })
+
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+
+}

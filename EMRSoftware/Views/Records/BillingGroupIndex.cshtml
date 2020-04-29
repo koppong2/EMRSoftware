@@ -1,0 +1,71 @@
+﻿@model IPagedList<EMRSoftware.Models.BillingGroup>
+@using PagedList;
+@using PagedList.Mvc;
+@using System.Linq
+
+
+@{
+    ViewBag.Title = "BillingGroup List";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Billing Group List</h2>
+
+<p>
+    @Html.ActionLink("Create New", "BillingGroupCreate")
+</p>
+
+<div align="right">
+    @using (Html.BeginForm("BillingGroupIndex", "Records", FormMethod.Get))
+    {
+        <input type="text" style="height:40px; width:250px" id="searching" name="searching" /> <input type="submit" value="Search" style="background-color:blue;border:black 2px solid;width:120px;height:40px" />
+    }
+</div>
+<br />
+<table class="table table-striped">
+    <thead>
+        <tr style="background-color:darkgray">
+            <th> @Html.ActionLink("Main Account", "BillingGroupIndex", new { sortby = ViewBag.SortIDParameter, searchby = Request.QueryString["searchby"] })</th>
+            <th>@Html.ActionLink("Hosp. No", "BillingGroupIndex", new { sortby = ViewBag.SortPatientIDParameter, searchby = Request.QueryString["searchby"] })</th>
+            <th>@Html.ActionLink("Sponsor Name", "BillingGroupIndex", new { sortby = ViewBag.SortSponsorNameParameter, searchby = Request.QueryString["searchby"] })</th>
+            <th>Sub Sponsor Name</th>
+            <th>@Html.ActionLink("Status Name", "BillingGroupIndex", new { sortby = ViewBag.SortStatusNameParameter, searchby = Request.QueryString["searchby"] })</th>
+            <th>@Html.ActionLink("Initial Dependant ID", "BillingGroupIndex", new { sortby = ViewBag.SortInitialDependantParameter, searchby = Request.QueryString["searchby"] })</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Count() == 0)
+        {
+            <tr>
+                <td colspan="7" style="color:red"> No match found</td>
+            </tr>
+        }
+        else
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.BillingGroupID</td>
+                    <td>@item.PatientID</td>
+                    <td>@item.Sponsor.SponsorName</td>
+                    <td>@item.SubSponsor.SubSponsorName</td>
+                    <td>@item.Status.StatusName</td>
+                    <td>@item.InitialDependantID</td>
+                    <td>
+                        @Html.ActionLink("Edit", "BillingGroupEdit", new { id = item.BillingGroupID }) |
+                        @Html.ActionLink("Details", "BillingGroupDetails", new { id = item.BillingGroupID }) |
+                        @Html.ActionLink("Delete", "BillingGroupDelete", new { id = item.BillingGroupID })
+                        @if (item.InitialDependantID == "NONE")
+                        {
+                            @Html.ActionLink("| ADD DEPENDANTS", "BillingGroupCreate", new { id = item.BillingGroupID , initialdepID=item.BillingGroupID,
+                           sponID =item.SponsorID,subsponID = item.SubSponsorID
+                       })
+                        }
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+@Html.PagedListPager(Model, page => Url.Action("BillingGroupIndex", new { page, sortby = Request.QueryString["sortby"] }))

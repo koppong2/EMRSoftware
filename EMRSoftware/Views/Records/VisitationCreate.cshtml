@@ -1,0 +1,300 @@
+﻿@model EMRSoftware.Models.Visitation
+
+@{
+    ViewBag.Title = "VisitationCreate";
+}
+
+<h2>Create Visit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <hr />
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        @Html.LabelFor(model => model.VisitationID, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.VisitationID, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @Value = @ViewBag.VisitationID } })
+            @Html.ValidationMessageFor(model => model.VisitationID, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.VisitTypeID, "VisitTypeID", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.VisitTypeID, (IEnumerable<SelectListItem>)ViewBag.VisitTypeIDList, "", new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.VisitTypeID, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.BillingGroupID, "BillingGroupID", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @*   @Html.DropDownListFor(model => model.BillingGroupID, (IEnumerable<SelectListItem>)ViewBag.BillingGroupIDList, "", htmlAttributes: new { @class = "form-control" }) **@
+            <input style="float:left" class="form-control text-box single-line" type="text" id="SearchByBillingGroupID" name="BillingGroupID" />
+            @Html.ValidationMessageFor(model => model.BillingGroupID, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.VisitationName, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.VisitationName, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.VisitationName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Age, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Age, new { htmlAttributes = new { @class = "form-control", @id = "PatientAge", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.Age, "", new { @class = "text-danger" })
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(model => model.SponsorID, "SponsorID", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @* @Html.DropDownListFor(model => model.SponsorID, (IEnumerable<SelectListItem>)ViewBag.SponsorIDList, "", new { htmlAttributes = new { @class = "form-control" } }) *@
+            <input style="float:left" class="form-control text-box single-line" type="text" id="SearchBySponsorID" name="SponsorID" readonly="readonly" />
+            @Html.ValidationMessageFor(model => model.SponsorID, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.SubSponsorID, "SubSponsorID", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.SubSponsorID, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.SubSponsorID, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.SpecialtyID, "SpecialtyID", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.SpecialtyID, (IEnumerable<SelectListItem>)ViewBag.SpecialtyIDList, "", htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.SpecialtyID, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ConsultationID, "ConsultationID", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.ConsultationID, (IEnumerable<SelectListItem>)ViewBag.ConsultationIDList, "", htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.ConsultationID, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.DoctorID, "DoctorID", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.DoctorID, (IEnumerable<SelectListItem>)ViewBag.DoctorIDList, "", htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.DoctorID, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Cost, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Cost, new { htmlAttributes = new { @class = "form-control", @id = "PatientCost", @readonly = "readonly" } })
+            @Html.ValidationMessageFor(model => model.Cost, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.ReceiptNo, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.ReceiptNo, new { htmlAttributes = new { @class = "form-control", @Value = "-" } })
+            @Html.ValidationMessageFor(model => model.ReceiptNo, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.copayAmt, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.copayAmt, new { htmlAttributes = new { @class = "form-control", @Value = "-" } })
+            @Html.ValidationMessageFor(model => model.copayAmt, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.RevenueCenterID, "RevenueCenterID", htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.RevenueCenterID, (IEnumerable<SelectListItem>)ViewBag.RevenueCenterIDList, "", htmlAttributes: new { @class = "form-control" })
+            @Html.ValidationMessageFor(model => model.RevenueCenterID, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Create" class="btn btn-default" />
+        </div>
+    </div>
+</div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "VisitationIndex")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script src="~/Scripts/jquery-ui-1.12.1.min.js"></script>
+    <script>
+        $(function () {
+            $("#SearchByBillingGroupID").autocomplete(
+                {
+                source: function (request, response)
+                {
+                    $.ajax({
+                        url: '@Url.Action("AutoCompleteBillingGroupID", "Records")',
+                        type: "POST",
+                        dataType: "json",
+                        data: { term: request.term },
+                        success: function (data) {
+                            response($.map(data, function (item) {
+                                return {
+                                    label: item.BillGroupName,
+                                    value: item.BillGroupID
+                                };
+                            }))
+                        }
+                    })
+                },
+                messages: {
+                    noResults: "", results: ""
+                },
+                select: function (event, ui)
+                {
+                    $(this).val(ui.item.label);
+                    var folderId = "#PatientFolderID" + (this.id).substring("FolderNumber".length);
+                    $(folderId).val(ui.item.value);
+                    return false;
+                },
+                minLength: 3
+            });
+        });
+
+        $(document).ready(function () {
+            $("#SearchByBillingGroupID").change(function () {
+                $.get("/Records/AutoCompleteBillingGroupID", { term: $("#SearchByBillingGroupID").val() }, function (data) {
+                    $("#PatientAge").empty();
+                    $("#VisitationName").empty();
+                    $("#SearchBySponsorID").empty();
+                    $("#SubSponsorID").empty();
+                    $.each(data, function (index, row) {
+                        $("#SearchBySponsorID").val(row.SponsorID),
+                            $("#SubSponsorID").val(row.SubSponsorID),
+                            $("#PatientAge").val(row.PatientAge),
+                            $("#VisitationName").val(row.PatientName)
+                    });
+                });
+            })
+        });
+
+
+        $(function () {
+            $("#SearchByPatientInfo").change(function () {
+                var r = $("#SearchByPatientInfo").val();
+                var g = r.split("[")[0];
+                //alert("Patient ID >>> " + g);
+                 $.ajax({
+                    type: "POST",
+                    url: "@Url.Action("FetchInsuredPatientID","Records")",
+                    data: {number1: g},
+                    dataType: "text",
+                    success: function (msg) {
+                        //alert(msg);
+                        $("#InsuredPatientID").val(msg);
+                    },
+                    error: function (req, status, error) {
+                        alert(error);
+                    }
+                });
+                    })
+        });
+
+
+         $(function () {                               //Code to Autocomplete Sponsor ID field
+            $("#SearchBySponsorID").autocomplete(
+                {
+                source: function (request, response)
+                {
+                    $.ajax({
+                        url: '@Url.Action("AutoCompleteSponsorID", "Records")',
+                        type: "POST",
+                        dataType: "json",
+                        data: { term: request.term },
+                        success: function (data) {
+                            response($.map(data, function (item) {
+                                return {
+                                    label: item.SponsorName,
+                                    value: item.SponsorID
+                                };
+                            }))
+                        }
+                    })
+                },
+                messages: {
+                    noResults: "", results: ""
+                }
+            });
+        });
+
+         $(document).ready(function () {
+             $("#SearchBySponsorID").change(function () {
+                 $.get("/Records/GetSubSponsorList", { sponsorID: $("#SearchBySponsorID").val() }, function (data) {
+                     $("#SubSponsorID").empty();
+                     $.each(data, function (index, row) {
+                         $("#SubSponsorID").append("<option value='" + row.SubSponsorID + "'>" + row.SubSponsorName + "</option>")
+                     });
+                 });
+             })
+         });
+
+         $(document).ready(function () {
+             $("#SpecialtyID").change(function () {
+                 $.get("/Records/GetConsultationList", { specialtyID: $("#SpecialtyID").val() }, function (data) {
+                     $("#ConsultationID").empty();
+                     $.each(data, function (index, row) {
+                         $("#ConsultationID").append("<option value='" +row.ConsultationID +"'>" + row.ConsultationName + "</option>")
+                     });
+                 });
+             })
+         });
+
+         $(document).ready(function () {
+             $("#SpecialtyID").change(function () {
+                 $.get("/Records/GetDoctorList", { specialtyID: $("#SpecialtyID").val() }, function (data) {
+                     $("#DoctorID").empty();
+                     $.each(data, function (index, row) {
+                         $("#DoctorID").append("<option value='" + row.DoctorID + "'>" + row.DoctorName + "</option>")
+                     });
+                 });
+             })
+         });
+
+         $(function () {
+             $("#ConsultationID").click(function () {
+                 $.ajax({
+                    type: "POST",
+                    url: "@Url.Action("GetVisitCost", "Records")",
+                    data: { vtypeid: $("#VisitTypeID").val(), consultid: $("#ConsultationID").val(), billgrpID: $("#SearchByBillingGroupID").val()},
+                    dataType: "text",
+                    success: function (msg) {
+                        //alert(msg);
+                        $("#PatientCost").val(msg);
+                    },
+                    error: function (req, status, error) {
+                        alert(error);
+                    }
+                });
+                    })
+           });
+    </script>
+}
+

@@ -1,0 +1,216 @@
+﻿@model EMRSoftware.Models.Visitation
+
+@{
+    ViewBag.Title = "Visit Details";
+}
+
+<h2>Visit Details</h2>
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.VisitationID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VisitationID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.VisitationName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VisitationName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VisitDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VisitDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.AgeGroup.AgeGroupName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AgeGroup.AgeGroupName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PatientID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PatientID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Consultation.ConsultationName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Consultation.ConsultationName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Doctor.DoctorName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Doctor.DoctorName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InsuranceType.InsuranceTypeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InsuranceType.InsuranceTypeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.InsuranceVal.InsuranceValName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.InsuranceVal.InsuranceValName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Patient.PatientName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Patient.PatientName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RevenueCenter.RevenueCenterName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RevenueCenter.RevenueCenterName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Specialty.SpecialtyName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Specialty.SpecialtyName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Sponsor.SponsorName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Sponsor.SponsorName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SubSponsor.SubSponsorName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SubSponsor.SubSponsorName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VisitStatu.VisitStatusName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VisitStatu.VisitStatusName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.VisitType.VisitTypeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.VisitType.VisitTypeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WorkingDay.WorkingDayName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WorkingDay.WorkingDayName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WorkingMonth.WorkingMonthName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WorkingMonth.WorkingMonthName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WorkingYear.WorkingYearName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WorkingYear.WorkingYearName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Age)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Age)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.copayAmt)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.copayAmt)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.BillingGroupID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.BillingGroupID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SponsorID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SponsorID)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ReceiptNo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReceiptNo)
+        </dd>
+
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "VisitationEdit", new { id = Model.VisitationID }) |
+    @Html.ActionLink("Back to List", "VisitationIndex")
+</p>

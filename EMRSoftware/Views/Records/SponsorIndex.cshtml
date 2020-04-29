@@ -1,0 +1,62 @@
+﻿@model IPagedList<EMRSoftware.Models.Sponsor>
+@using PagedList;
+@using PagedList.Mvc;
+@using System.Linq
+
+@{
+    ViewBag.Title = "SponsorIndex";
+}
+
+<h2>Sponsor List</h2>
+
+<p>
+    @Html.ActionLink("Create New", "SponsorCreate")
+</p>
+<div align="right">
+    @using (Html.BeginForm("SponsorIndex", "Records", FormMethod.Get))
+    {
+        <input type="text" style="height:40px; width:250px" id="searching" name="searching" /> <input type="submit" value="Search" style="background-color:blue;border:black 2px solid;width:120px;height:40px" />
+    }
+</div>
+<br />
+<table class="table table-striped">
+    <thead>
+        <tr style="background-color:darkgray">
+            <th> @Html.ActionLink("Sponsor ID", "SponsorIndex", new { sortby = ViewBag.SortIDParameter, searchby = Request.QueryString["searchby"] })</th>
+            <th>@Html.ActionLink("Sponsor Name", "SponsorIndex", new { sortby = ViewBag.SortSponsorNameParameter, searchby = Request.QueryString["searchby"] })</th>
+            <th>@Html.ActionLink("Insurance Type", "SponsorIndex", new { sortby = ViewBag.SortInsuranceTypeParameter, searchby = Request.QueryString["searchby"] })</th>
+            <th>Region</th>
+            <th>@Html.ActionLink("Status Name", "SponsorIndex", new { sortby = ViewBag.SortStatusNameParameter, searchby = Request.QueryString["searchby"] })</th>
+            <th>Location</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model.Count() == 0)
+        {
+            <tr>
+                <td colspan="7" style="color:red"> No match found</td>
+            </tr>
+        }
+        else
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.SponsorID</td>
+                    <td>@item.SponsorName</td>
+                    <td>@item.InsuranceType.InsuranceTypeName</td>
+                    <td>@item.Region.RegionName</td>
+                    <td>@item.Status.StatusName</td>
+                    <td>@item.Location</td>
+                    <td>
+                        @Html.ActionLink("Edit", "SponsorEdit", new { id = item.SponsorID }) |
+                        @Html.ActionLink("Details", "SponsorDetails", new { id = item.SponsorID }) |
+                        @Html.ActionLink("Delete", "SponsorDelete", new { id = item.SponsorID })
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+@Html.PagedListPager(Model, page => Url.Action("SponsorIndex", new { page, sortby = Request.QueryString["sortby"] }))

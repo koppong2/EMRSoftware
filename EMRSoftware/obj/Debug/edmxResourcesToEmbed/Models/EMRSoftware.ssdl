@@ -1,0 +1,2234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EMRSoftwareModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AgeGroup">
+    <Key>
+      <PropertyRef Name="AgeGroupID" />
+    </Key>
+    <Property Name="AgeGroupID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="AgeGroupName" Type="nvarchar" MaxLength="70" Nullable="false" />
+    <Property Name="AgeGroup1" Type="nvarchar" MaxLength="50" />
+    <Property Name="AgeGroup2" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="BillingGroup">
+    <Key>
+      <PropertyRef Name="BillingGroupID" />
+    </Key>
+    <Property Name="BillingGroupID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PatientID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SponsorID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SubSponsorID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SponsorCategoryID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="InitialDependantID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="RelationID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="StatusID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="BillingGroup1" Type="nvarchar" MaxLength="50" />
+    <Property Name="BillingGroup2" Type="nvarchar" MaxLength="50" />
+    <Property Name="BillingGroup3" Type="nvarchar" MaxLength="50" />
+    <Property Name="BillingGroup4" Type="nvarchar" MaxLength="50" />
+    <Property Name="BillingGroup5" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Consultation">
+    <Key>
+      <PropertyRef Name="ConsultationID" />
+    </Key>
+    <Property Name="ConsultationID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ConsultationName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="RegistrationCost" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ReviewCost" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ConsultationCost" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="StatusID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Consultation1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Consultation2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Consultation3" Type="nvarchar" MaxLength="50" />
+    <Property Name="Consultation4" Type="nvarchar" MaxLength="50" />
+    <Property Name="Consultation5" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ConsultReview">
+    <Key>
+      <PropertyRef Name="ConsultReviewID" />
+    </Key>
+    <Property Name="ConsultReviewID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ConsultReviewName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="ConsultReviewDate" Type="datetime" Nullable="false" />
+    <Property Name="VisitationID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PatientID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SponsorID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="RevenueCenterID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="WorkingYearID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="WorkingMonthID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="WorkingDayID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ConsultReview1" Type="nvarchar" MaxLength="50" />
+    <Property Name="ConsultReview2" Type="nvarchar" MaxLength="50" />
+    <Property Name="ConsultReview3" Type="nvarchar" MaxLength="50" />
+    <Property Name="ConsultReview4" Type="nvarchar" MaxLength="50" />
+    <Property Name="ConsultReview5" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Doctor">
+    <Key>
+      <PropertyRef Name="DoctorID" />
+    </Key>
+    <Property Name="DoctorID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DoctorName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SpecialtyID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Doctor1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Doctor2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Doctor3" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DrugCategory">
+    <Key>
+      <PropertyRef Name="DrugCategoryID" />
+    </Key>
+    <Property Name="DrugCategoryID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DrugCategoryName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="DrugCategory1" Type="nchar" MaxLength="10" />
+    <Property Name="DrugCategory2" Type="nchar" MaxLength="10" />
+    <Property Name="DrugCategory3" Type="nchar" MaxLength="10" />
+    <Property Name="DrugCategory4" Type="nchar" MaxLength="10" />
+    <Property Name="DrugCategory5" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Drugs">
+    <Key>
+      <PropertyRef Name="DrugID" />
+    </Key>
+    <Property Name="DrugID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DrugName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="DrugCategoryID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DrugTypeID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UnitCost" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Drug1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Drug2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Drug3" Type="nvarchar" MaxLength="50" />
+    <Property Name="Drug4" Type="nvarchar" MaxLength="50" />
+    <Property Name="Drug5" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DrugSale">
+    <Key>
+      <PropertyRef Name="DrugSaleID" />
+    </Key>
+    <Property Name="DrugSaleID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DrugSaleDate" Type="datetime" Nullable="false" />
+    <Property Name="VisitationID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PatientID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SponsorID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="RevenueCenterID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DrugSale1" Type="nvarchar" MaxLength="50" />
+    <Property Name="DrugSale2" Type="nvarchar" MaxLength="50" />
+    <Property Name="DrugSale3" Type="nvarchar" MaxLength="50" />
+    <Property Name="DrugSale4" Type="nvarchar" MaxLength="50" />
+    <Property Name="DrugSale5" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'EMRSoftware.dbo.DrugSaleItems' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="DrugSaleItems">
+    <Key>
+      <PropertyRef Name="DrugSaleID" />
+      <PropertyRef Name="DrugID" />
+      <PropertyRef Name="VisitationID" />
+      <PropertyRef Name="PatientID" />
+      <PropertyRef Name="unitCost" />
+      <PropertyRef Name="Qty" />
+      <PropertyRef Name="FinalAmt" />
+      <PropertyRef Name="InsuranceTypeID" />
+      <PropertyRef Name="InsuranceValID" />
+      <PropertyRef Name="DispenseDate" />
+      <PropertyRef Name="WorkingYearID" />
+      <PropertyRef Name="WorkingMonthID" />
+      <PropertyRef Name="WorkingDayID" />
+    </Key>
+    <Property Name="DrugSaleID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DrugID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="VisitationID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PatientID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="unitCost" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Qty" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FinalAmt" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="InsuranceTypeID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="InsuranceValID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DispenseDate" Type="datetime" Nullable="false" />
+    <Property Name="WorkingYearID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="WorkingMonthID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="WorkingDayID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DispenseDate1" Type="datetime" />
+    <Property Name="DispenseDate2" Type="datetime" />
+    <Property Name="DispenseDate3" Type="datetime" />
+    <Property Name="DrugSaleItems1" Type="nvarchar" MaxLength="50" />
+    <Property Name="DrugSaleItems2" Type="nvarchar" MaxLength="50" />
+    <Property Name="DrugSaleItems3" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="DrugType">
+    <Key>
+      <PropertyRef Name="DrugTypeID" />
+    </Key>
+    <Property Name="DrugTypeID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DrugTypeName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="DrugType1" Type="nvarchar" MaxLength="50" />
+    <Property Name="DrugType2" Type="nvarchar" MaxLength="50" />
+    <Property Name="DrugType3" Type="nvarchar" MaxLength="50" />
+    <Property Name="DrugType4" Type="nvarchar" MaxLength="50" />
+    <Property Name="DrugType5" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Gender">
+    <Key>
+      <PropertyRef Name="GenderID" />
+    </Key>
+    <Property Name="GenderID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="GenderName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Gender1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Gender2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Gender3" Type="nvarchar" MaxLength="50" />
+    <Property Name="Gender4" Type="nvarchar" MaxLength="50" />
+    <Property Name="Gender5" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="IncomingDrug">
+    <Key>
+      <PropertyRef Name="IncomingDrugID" />
+    </Key>
+    <Property Name="IncomingDrugID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SupplierID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="IncomingDrugDate" Type="datetime" Nullable="false" />
+    <Property Name="WorkingYearID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="WorkingMonthID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="WorkingDayID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="IncomingDrug1" Type="nvarchar" MaxLength="50" />
+    <Property Name="IncomingDrug2" Type="nvarchar" MaxLength="50" />
+    <Property Name="IncomingDrug3" Type="nvarchar" MaxLength="50" />
+    <Property Name="IncomingDrug4" Type="nvarchar" MaxLength="50" />
+    <Property Name="IncomingDrug5" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'EMRSoftware.dbo.IncomingDrugItems' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="IncomingDrugItems">
+    <Key>
+      <PropertyRef Name="IncomingDrugID" />
+      <PropertyRef Name="DrugID" />
+      <PropertyRef Name="UnitCost" />
+      <PropertyRef Name="Qty" />
+      <PropertyRef Name="FinalAmt" />
+      <PropertyRef Name="EntryDate" />
+      <PropertyRef Name="WorkingYearID" />
+      <PropertyRef Name="WorkingMonthID" />
+      <PropertyRef Name="WorkingDayID" />
+    </Key>
+    <Property Name="IncomingDrugID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DrugID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UnitCost" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Qty" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FinalAmt" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="EntryDate" Type="datetime" Nullable="false" />
+    <Property Name="WorkingYearID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="WorkingMonthID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="WorkingDayID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="IncomingDrugItems1" Type="nvarchar" MaxLength="50" />
+    <Property Name="IncomingDrugItems2" Type="nvarchar" MaxLength="50" />
+    <Property Name="IncomingDrugItems3" Type="nvarchar" MaxLength="50" />
+    <Property Name="IncomingDrugItems4" Type="nvarchar" MaxLength="50" />
+    <Property Name="IncomingDrugItems5" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="IncomingItems">
+    <Key>
+      <PropertyRef Name="IncomingItemID" />
+    </Key>
+    <Property Name="IncomingItemID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SupplierID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="IncomingItemDate" Type="datetime" Nullable="false" />
+    <Property Name="WorkingYearID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="WorkingMonthID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="WorkingDayID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="IncomingItem1" Type="nvarchar" MaxLength="50" />
+    <Property Name="IncomingItem2" Type="nvarchar" MaxLength="50" />
+    <Property Name="IncomingItem3" Type="nvarchar" MaxLength="50" />
+    <Property Name="IncomingItem4" Type="nvarchar" MaxLength="50" />
+    <Property Name="IncomingItem5" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'EMRSoftware.dbo.IncomingItemsDetail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="IncomingItemsDetail">
+    <Key>
+      <PropertyRef Name="IncomingItemID" />
+      <PropertyRef Name="ItemID" />
+      <PropertyRef Name="UnitCost" />
+      <PropertyRef Name="Qty" />
+      <PropertyRef Name="FinalAmt" />
+      <PropertyRef Name="EntryDate" />
+      <PropertyRef Name="WorkingYearID" />
+      <PropertyRef Name="WorkingMonthID" />
+      <PropertyRef Name="WorkingDayID" />
+    </Key>
+    <Property Name="IncomingItemID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ItemID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UnitCost" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Qty" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FinalAmt" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="EntryDate" Type="datetime" Nullable="false" />
+    <Property Name="WorkingYearID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="WorkingMonthID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="WorkingDayID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="IncomingItemsDetail1" Type="nchar" MaxLength="10" />
+    <Property Name="IncomingItemsDetail2" Type="nchar" MaxLength="10" />
+    <Property Name="IncomingItemsDetail3" Type="nchar" MaxLength="10" />
+    <Property Name="IncomingItemsDetail4" Type="nchar" MaxLength="10" />
+    <Property Name="IncomingItemsDetail5" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="InsuranceType">
+    <Key>
+      <PropertyRef Name="InsuranceTypeID" />
+    </Key>
+    <Property Name="InsuranceTypeID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="InsuranceTypeName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="InsuranceType1" Type="nvarchar" MaxLength="50" />
+    <Property Name="InsuranceType2" Type="nvarchar" MaxLength="50" />
+    <Property Name="InsuranceType3" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="InsuranceVal">
+    <Key>
+      <PropertyRef Name="InsuranceValID" />
+    </Key>
+    <Property Name="InsuranceValID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="InsuranceValName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="InsuranceVal1" Type="nvarchar" MaxLength="50" />
+    <Property Name="InsuranceVal2" Type="nvarchar" MaxLength="50" />
+    <Property Name="InsuranceVal3" Type="nvarchar" MaxLength="50" />
+    <Property Name="InsuranceVal4" Type="nvarchar" MaxLength="50" />
+    <Property Name="InsuranceVal5" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ItemCategory">
+    <Key>
+      <PropertyRef Name="ItemCategoryID" />
+    </Key>
+    <Property Name="ItemCategoryID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ItemCategoryName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="ItemCategory1" Type="nvarchar" MaxLength="50" />
+    <Property Name="ItemCategory2" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Items">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="ItemID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ItemName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="ItemCategoryID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UnitCost" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Item1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Item2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Item3" Type="nvarchar" MaxLength="50" />
+    <Property Name="Item4" Type="nvarchar" MaxLength="50" />
+    <Property Name="Item5" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Patient">
+    <Key>
+      <PropertyRef Name="PatientID" />
+    </Key>
+    <Property Name="PatientID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PatientName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="PhoneNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ResidentialAddress" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="postalAddress" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="dob" Type="datetime" Nullable="false" />
+    <Property Name="DateOfRegistration" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="NextOfKinName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="NextOfKinAdd" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="PatientImage" Type="varbinary(max)" Nullable="false" />
+    <Property Name="GenderID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Patient1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Patient2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Patient3" Type="nvarchar" MaxLength="50" />
+    <Property Name="Patient4" Type="nvarchar" MaxLength="50" />
+    <Property Name="Patient5" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Receipt">
+    <Key>
+      <PropertyRef Name="ReceiptID" />
+    </Key>
+    <Property Name="ReceiptID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PatientID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ReceiptDate" Type="datetime" Nullable="false" />
+    <Property Name="ReceiptTypeID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ReceiptTypeDetails" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="ReceiptVal1" Type="nchar" MaxLength="10" />
+    <Property Name="ReceiptVal2" Type="nchar" MaxLength="10" />
+    <Property Name="ReceiptVal3" Type="nchar" MaxLength="10" />
+    <Property Name="ReceiptVal4" Type="nchar" MaxLength="10" />
+    <Property Name="ReceiptDate1" Type="datetime" />
+    <Property Name="ReceiptDate2" Type="datetime" />
+    <Property Name="ReceiptDate3" Type="datetime" />
+    <Property Name="ReceiptDate4" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ReceiptType">
+    <Key>
+      <PropertyRef Name="ReceiptTypeID" />
+    </Key>
+    <Property Name="ReceiptTypeID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ReceiptTypeName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ReceiptType1" Type="nvarchar" MaxLength="50" />
+    <Property Name="ReceiptType2" Type="nvarchar" MaxLength="50" />
+    <Property Name="ReceiptType3" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Refund">
+    <Key>
+      <PropertyRef Name="RefundID" />
+    </Key>
+    <Property Name="RefundID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ReceiptID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ReceiptVal1" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ReceiptVal3" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="RefundAmount" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="RefundDate" Type="datetime" Nullable="false" />
+    <Property Name="Refund1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Refund2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Refund3" Type="nvarchar" MaxLength="50" />
+    <Property Name="Refund4" Type="nvarchar" MaxLength="50" />
+    <Property Name="Refund5" Type="nvarchar" MaxLength="50" />
+    <Property Name="RefundDate1" Type="datetime" />
+    <Property Name="RefundDate2" Type="datetime" />
+    <Property Name="RefundDate3" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Region">
+    <Key>
+      <PropertyRef Name="RegionID" />
+    </Key>
+    <Property Name="RegionID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="RegionName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Region1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Region2" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Relation">
+    <Key>
+      <PropertyRef Name="RelationID" />
+    </Key>
+    <Property Name="RelationID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="RelationName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Relation1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Relation2" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="RevenueCenter">
+    <Key>
+      <PropertyRef Name="RevenueCenterID" />
+    </Key>
+    <Property Name="RevenueCenterID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="RevenueCenterName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="RevenueCenter1" Type="nvarchar" MaxLength="50" />
+    <Property Name="RevenueCenter2" Type="nvarchar" MaxLength="50" />
+    <Property Name="RevenueCenter3" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="RoleID" />
+    </Key>
+    <Property Name="RoleID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="RoleName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Role1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Role2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Role3" Type="nvarchar" MaxLength="50" />
+    <Property Name="Role4" Type="nvarchar" MaxLength="50" />
+    <Property Name="Role5" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'EMRSoftware.dbo.Services' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Services">
+    <Key>
+      <PropertyRef Name="TreamentID" />
+      <PropertyRef Name="ConsultReviewID" />
+      <PropertyRef Name="VisitationID" />
+      <PropertyRef Name="UnitCost" />
+      <PropertyRef Name="Qty" />
+      <PropertyRef Name="FinalAmt" />
+      <PropertyRef Name="WorkingYearID" />
+      <PropertyRef Name="WorkingMonthID" />
+      <PropertyRef Name="WorkingDayID" />
+    </Key>
+    <Property Name="TreamentID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ConsultReviewID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="VisitationID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UnitCost" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Qty" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="FinalAmt" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="WorkingYearID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="WorkingMonthID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="WorkingDayID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Service1" Type="nchar" MaxLength="10" />
+    <Property Name="Service2" Type="nchar" MaxLength="10" />
+    <Property Name="Service3" Type="nchar" MaxLength="10" />
+    <Property Name="Service4" Type="nchar" MaxLength="10" />
+    <Property Name="Service5" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Specialty">
+    <Key>
+      <PropertyRef Name="SpecialtyID" />
+    </Key>
+    <Property Name="SpecialtyID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SpecialtyName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Specialty1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Specialty2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Specialty3" Type="nvarchar" MaxLength="50" />
+    <Property Name="Specialty4" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Sponsor">
+    <Key>
+      <PropertyRef Name="SponsorID" />
+    </Key>
+    <Property Name="SponsorID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SponsorName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="StatusID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Location" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="PhoneNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+    <Property Name="PostalAddress" Type="nvarchar" MaxLength="100" />
+    <Property Name="InsuranceTypeID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="RegionID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ClaimsInfo" Type="nvarchar" MaxLength="100" />
+    <Property Name="Sponsor1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sponsor2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sponsor3" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sponsor4" Type="nvarchar" MaxLength="50" />
+    <Property Name="Sponsor5" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SponsorCategory">
+    <Key>
+      <PropertyRef Name="SponsorCategoryID" />
+    </Key>
+    <Property Name="SponsorCategoryID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SponsorCategoryName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="SponsorID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SubSponsorID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SponsorCategory1" Type="nvarchar" MaxLength="50" />
+    <Property Name="SponsorCategory2" Type="nvarchar" MaxLength="50" />
+    <Property Name="SponsorCategory3" Type="nvarchar" MaxLength="50" />
+    <Property Name="SponsorCategory4" Type="nvarchar" MaxLength="50" />
+    <Property Name="SponsorCategory5" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Staff">
+    <Key>
+      <PropertyRef Name="StaffId" />
+    </Key>
+    <Property Name="StaffId" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="StaffName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="StatusId" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UnitId" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Staff1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Staff2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Staff3" Type="nvarchar" MaxLength="50" />
+    <Property Name="Staff4" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="StatusId" />
+    </Key>
+    <Property Name="StatusId" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="StatusName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Status1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Status2" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SubSponsor">
+    <Key>
+      <PropertyRef Name="SubSponsorID" />
+    </Key>
+    <Property Name="SubSponsorID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SubSponsorName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="SponsorID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="StatusID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Location" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PhoneNo" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="70" />
+    <Property Name="PostalAddress" Type="nvarchar" MaxLength="100" />
+    <Property Name="RegionID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ClaimsInfo" Type="nvarchar" MaxLength="200" />
+    <Property Name="SubSponsor1" Type="nvarchar" MaxLength="50" />
+    <Property Name="SubSponsor2" Type="nvarchar" MaxLength="50" />
+    <Property Name="SubSponsor3" Type="nvarchar" MaxLength="50" />
+    <Property Name="SubSponsor4" Type="nvarchar" MaxLength="50" />
+    <Property Name="SubSponsor5" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Supplier">
+    <Key>
+      <PropertyRef Name="SupplierID" />
+    </Key>
+    <Property Name="SupplierID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SupplierName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="StatusID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="location" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="100" />
+    <Property Name="phone" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="postalAddress" Type="nvarchar" MaxLength="100" />
+    <Property Name="supplier1" Type="nvarchar" MaxLength="50" />
+    <Property Name="supplier2" Type="nvarchar" MaxLength="50" />
+    <Property Name="supplier3" Type="nvarchar" MaxLength="50" />
+    <Property Name="supplier4" Type="nvarchar" MaxLength="50" />
+    <Property Name="supplier5" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SystemUser">
+    <Key>
+      <PropertyRef Name="systemUserId" />
+    </Key>
+    <Property Name="systemUserId" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="StaffId" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="roleid" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="statusId" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="systemuser1" Type="nvarchar" MaxLength="50" />
+    <Property Name="systemuser2" Type="nvarchar" MaxLength="50" />
+    <Property Name="systemuser3" Type="nvarchar" MaxLength="50" />
+    <Property Name="systemuser4" Type="nvarchar" MaxLength="50" />
+    <Property Name="systemuser5" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Treatment">
+    <Key>
+      <PropertyRef Name="TreatmentID" />
+    </Key>
+    <Property Name="TreatmentID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="TreatmentName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="UnitCost" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="StatusID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Treatment1" Type="nchar" MaxLength="10" />
+    <Property Name="Treatment2" Type="nchar" MaxLength="10" />
+    <Property Name="Treatment3" Type="nchar" MaxLength="10" />
+    <Property Name="Treatment4" Type="nchar" MaxLength="10" />
+    <Property Name="Treatment5" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="Unit">
+    <Key>
+      <PropertyRef Name="UnitId" />
+    </Key>
+    <Property Name="UnitId" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="UnitName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Unit1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Unit2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Unit3" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Visitation">
+    <Key>
+      <PropertyRef Name="VisitationID" />
+    </Key>
+    <Property Name="VisitationID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="VisitationName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="VisitTypeID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="VisitDate" Type="datetime" Nullable="false" />
+    <Property Name="PatientID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SponsorID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SubSponsorID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SpecialtyID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="ConsultationID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DoctorID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="BillingGroupID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Age" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="AgeGroupID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="InsuranceTypeID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="InsuranceValID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Cost" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="copayAmt" Type="nvarchar" MaxLength="50" />
+    <Property Name="VisitStatusID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="RevenueCenterID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="WorkingYearID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="WorkingMonthID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="WorkingDayID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Vistation1" Type="nvarchar" MaxLength="50" />
+    <Property Name="Vistation2" Type="nvarchar" MaxLength="50" />
+    <Property Name="Vistation3" Type="nvarchar" MaxLength="50" />
+    <Property Name="Vistation4" Type="nvarchar" MaxLength="50" />
+    <Property Name="Vistation5" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="VisitStatus">
+    <Key>
+      <PropertyRef Name="VisitStatusID" />
+    </Key>
+    <Property Name="VisitStatusID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="VisitStatusName" Type="nvarchar" MaxLength="70" Nullable="false" />
+    <Property Name="VisitStatus1" Type="nvarchar" MaxLength="50" />
+    <Property Name="VisitStatus2" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="VisitType">
+    <Key>
+      <PropertyRef Name="VisitTypeID" />
+    </Key>
+    <Property Name="VisitTypeID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="VisitTypeName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="VisitType1" Type="nvarchar" MaxLength="50" />
+    <Property Name="VisitType2" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WorkingDay">
+    <Key>
+      <PropertyRef Name="WorkingDayID" />
+    </Key>
+    <Property Name="WorkingDayID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="WorkingDayName" Type="nvarchar" MaxLength="70" Nullable="false" />
+    <Property Name="WorkingDay1" Type="nvarchar" MaxLength="50" />
+    <Property Name="WorkingDay2" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WorkingMonth">
+    <Key>
+      <PropertyRef Name="WorkingMonthID" />
+    </Key>
+    <Property Name="WorkingMonthID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="WorkingMonthName" Type="nvarchar" MaxLength="70" Nullable="false" />
+    <Property Name="WorkingMonth1" Type="nvarchar" MaxLength="50" />
+    <Property Name="WorkingMonth2" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="WorkingYear">
+    <Key>
+      <PropertyRef Name="WorkingYearID" />
+    </Key>
+    <Property Name="WorkingYearID" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="WorkingYearName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="WorkingYear1" Type="nvarchar" MaxLength="50" />
+    <Property Name="WorkingYear2" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_BillingGroup_BillingGroup">
+    <End Role="BillingGroup" Type="Self.BillingGroup" Multiplicity="1" />
+    <End Role="BillingGroup1" Type="Self.BillingGroup" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="BillingGroup">
+        <PropertyRef Name="BillingGroupID" />
+      </Principal>
+      <Dependent Role="BillingGroup1">
+        <PropertyRef Name="BillingGroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BillingGroup_Patient">
+    <End Role="Patient" Type="Self.Patient" Multiplicity="1" />
+    <End Role="BillingGroup" Type="Self.BillingGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient">
+        <PropertyRef Name="PatientID" />
+      </Principal>
+      <Dependent Role="BillingGroup">
+        <PropertyRef Name="PatientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BillingGroup_Relation">
+    <End Role="Relation" Type="Self.Relation" Multiplicity="1" />
+    <End Role="BillingGroup" Type="Self.BillingGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Relation">
+        <PropertyRef Name="RelationID" />
+      </Principal>
+      <Dependent Role="BillingGroup">
+        <PropertyRef Name="RelationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BillingGroup_Sponsor">
+    <End Role="Sponsor" Type="Self.Sponsor" Multiplicity="1" />
+    <End Role="BillingGroup" Type="Self.BillingGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sponsor">
+        <PropertyRef Name="SponsorID" />
+      </Principal>
+      <Dependent Role="BillingGroup">
+        <PropertyRef Name="SponsorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BillingGroup_SponsorCategory">
+    <End Role="SponsorCategory" Type="Self.SponsorCategory" Multiplicity="1" />
+    <End Role="BillingGroup" Type="Self.BillingGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SponsorCategory">
+        <PropertyRef Name="SponsorCategoryID" />
+      </Principal>
+      <Dependent Role="BillingGroup">
+        <PropertyRef Name="SponsorCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BillingGroup_Status">
+    <End Role="Status" Type="Self.Status" Multiplicity="1" />
+    <End Role="BillingGroup" Type="Self.BillingGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="StatusId" />
+      </Principal>
+      <Dependent Role="BillingGroup">
+        <PropertyRef Name="StatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BillingGroup_SubSponsor">
+    <End Role="SubSponsor" Type="Self.SubSponsor" Multiplicity="1" />
+    <End Role="BillingGroup" Type="Self.BillingGroup" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubSponsor">
+        <PropertyRef Name="SubSponsorID" />
+      </Principal>
+      <Dependent Role="BillingGroup">
+        <PropertyRef Name="SubSponsorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ConsultReview_ConsultReview">
+    <End Role="ConsultReview" Type="Self.ConsultReview" Multiplicity="1" />
+    <End Role="ConsultReview1" Type="Self.ConsultReview" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ConsultReview">
+        <PropertyRef Name="ConsultReviewID" />
+      </Principal>
+      <Dependent Role="ConsultReview1">
+        <PropertyRef Name="ConsultReviewID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ConsultReview_Patient">
+    <End Role="Patient" Type="Self.Patient" Multiplicity="1" />
+    <End Role="ConsultReview" Type="Self.ConsultReview" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient">
+        <PropertyRef Name="PatientID" />
+      </Principal>
+      <Dependent Role="ConsultReview">
+        <PropertyRef Name="PatientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ConsultReview_RevenueCenter">
+    <End Role="RevenueCenter" Type="Self.RevenueCenter" Multiplicity="1" />
+    <End Role="ConsultReview" Type="Self.ConsultReview" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RevenueCenter">
+        <PropertyRef Name="RevenueCenterID" />
+      </Principal>
+      <Dependent Role="ConsultReview">
+        <PropertyRef Name="RevenueCenterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ConsultReview_Sponsor">
+    <End Role="Sponsor" Type="Self.Sponsor" Multiplicity="1" />
+    <End Role="ConsultReview" Type="Self.ConsultReview" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sponsor">
+        <PropertyRef Name="SponsorID" />
+      </Principal>
+      <Dependent Role="ConsultReview">
+        <PropertyRef Name="SponsorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ConsultReview_Visitation">
+    <End Role="Visitation" Type="Self.Visitation" Multiplicity="1" />
+    <End Role="ConsultReview" Type="Self.ConsultReview" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Visitation">
+        <PropertyRef Name="VisitationID" />
+      </Principal>
+      <Dependent Role="ConsultReview">
+        <PropertyRef Name="VisitationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ConsultReview_WorkingDay">
+    <End Role="WorkingDay" Type="Self.WorkingDay" Multiplicity="1" />
+    <End Role="ConsultReview" Type="Self.ConsultReview" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkingDay">
+        <PropertyRef Name="WorkingDayID" />
+      </Principal>
+      <Dependent Role="ConsultReview">
+        <PropertyRef Name="WorkingDayID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ConsultReview_WorkingMonth">
+    <End Role="WorkingMonth" Type="Self.WorkingMonth" Multiplicity="1" />
+    <End Role="ConsultReview" Type="Self.ConsultReview" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkingMonth">
+        <PropertyRef Name="WorkingMonthID" />
+      </Principal>
+      <Dependent Role="ConsultReview">
+        <PropertyRef Name="WorkingMonthID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ConsultReview_WorkingYear">
+    <End Role="WorkingYear" Type="Self.WorkingYear" Multiplicity="1" />
+    <End Role="ConsultReview" Type="Self.ConsultReview" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkingYear">
+        <PropertyRef Name="WorkingYearID" />
+      </Principal>
+      <Dependent Role="ConsultReview">
+        <PropertyRef Name="WorkingYearID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Doctor_Specialty">
+    <End Role="Specialty" Type="Self.Specialty" Multiplicity="1" />
+    <End Role="Doctor" Type="Self.Doctor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Specialty">
+        <PropertyRef Name="SpecialtyID" />
+      </Principal>
+      <Dependent Role="Doctor">
+        <PropertyRef Name="SpecialtyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Drugs_DrugCategory">
+    <End Role="DrugCategory" Type="Self.DrugCategory" Multiplicity="1" />
+    <End Role="Drugs" Type="Self.Drugs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DrugCategory">
+        <PropertyRef Name="DrugCategoryID" />
+      </Principal>
+      <Dependent Role="Drugs">
+        <PropertyRef Name="DrugCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Drugs_DrugType">
+    <End Role="DrugType" Type="Self.DrugType" Multiplicity="1" />
+    <End Role="Drugs" Type="Self.Drugs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DrugType">
+        <PropertyRef Name="DrugTypeID" />
+      </Principal>
+      <Dependent Role="Drugs">
+        <PropertyRef Name="DrugTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DrugSale_Patient">
+    <End Role="Patient" Type="Self.Patient" Multiplicity="1" />
+    <End Role="DrugSale" Type="Self.DrugSale" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient">
+        <PropertyRef Name="PatientID" />
+      </Principal>
+      <Dependent Role="DrugSale">
+        <PropertyRef Name="PatientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DrugSale_RevenueCenter">
+    <End Role="RevenueCenter" Type="Self.RevenueCenter" Multiplicity="1" />
+    <End Role="DrugSale" Type="Self.DrugSale" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RevenueCenter">
+        <PropertyRef Name="RevenueCenterID" />
+      </Principal>
+      <Dependent Role="DrugSale">
+        <PropertyRef Name="RevenueCenterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DrugSale_Sponsor">
+    <End Role="Sponsor" Type="Self.Sponsor" Multiplicity="1" />
+    <End Role="DrugSale" Type="Self.DrugSale" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sponsor">
+        <PropertyRef Name="SponsorID" />
+      </Principal>
+      <Dependent Role="DrugSale">
+        <PropertyRef Name="SponsorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DrugSale_Visitation">
+    <End Role="Visitation" Type="Self.Visitation" Multiplicity="1" />
+    <End Role="DrugSale" Type="Self.DrugSale" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Visitation">
+        <PropertyRef Name="VisitationID" />
+      </Principal>
+      <Dependent Role="DrugSale">
+        <PropertyRef Name="VisitationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DrugSaleItems_Drugs">
+    <End Role="Drugs" Type="Self.Drugs" Multiplicity="1" />
+    <End Role="DrugSaleItems" Type="Self.DrugSaleItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Drugs">
+        <PropertyRef Name="DrugID" />
+      </Principal>
+      <Dependent Role="DrugSaleItems">
+        <PropertyRef Name="DrugID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DrugSaleItems_DrugSale">
+    <End Role="DrugSale" Type="Self.DrugSale" Multiplicity="1" />
+    <End Role="DrugSaleItems" Type="Self.DrugSaleItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DrugSale">
+        <PropertyRef Name="DrugSaleID" />
+      </Principal>
+      <Dependent Role="DrugSaleItems">
+        <PropertyRef Name="DrugSaleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DrugSaleItems_InsuranceType">
+    <End Role="InsuranceType" Type="Self.InsuranceType" Multiplicity="1" />
+    <End Role="DrugSaleItems" Type="Self.DrugSaleItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InsuranceType">
+        <PropertyRef Name="InsuranceTypeID" />
+      </Principal>
+      <Dependent Role="DrugSaleItems">
+        <PropertyRef Name="InsuranceTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DrugSaleItems_InsuranceVal">
+    <End Role="InsuranceVal" Type="Self.InsuranceVal" Multiplicity="1" />
+    <End Role="DrugSaleItems" Type="Self.DrugSaleItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InsuranceVal">
+        <PropertyRef Name="InsuranceValID" />
+      </Principal>
+      <Dependent Role="DrugSaleItems">
+        <PropertyRef Name="InsuranceValID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DrugSaleItems_Patient">
+    <End Role="Patient" Type="Self.Patient" Multiplicity="1" />
+    <End Role="DrugSaleItems" Type="Self.DrugSaleItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient">
+        <PropertyRef Name="PatientID" />
+      </Principal>
+      <Dependent Role="DrugSaleItems">
+        <PropertyRef Name="PatientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DrugSaleItems_Visitation">
+    <End Role="Visitation" Type="Self.Visitation" Multiplicity="1" />
+    <End Role="DrugSaleItems" Type="Self.DrugSaleItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Visitation">
+        <PropertyRef Name="VisitationID" />
+      </Principal>
+      <Dependent Role="DrugSaleItems">
+        <PropertyRef Name="VisitationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DrugSaleItems_WorkingDay">
+    <End Role="WorkingDay" Type="Self.WorkingDay" Multiplicity="1" />
+    <End Role="DrugSaleItems" Type="Self.DrugSaleItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkingDay">
+        <PropertyRef Name="WorkingDayID" />
+      </Principal>
+      <Dependent Role="DrugSaleItems">
+        <PropertyRef Name="WorkingDayID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DrugSaleItems_WorkingMonth">
+    <End Role="WorkingMonth" Type="Self.WorkingMonth" Multiplicity="1" />
+    <End Role="DrugSaleItems" Type="Self.DrugSaleItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkingMonth">
+        <PropertyRef Name="WorkingMonthID" />
+      </Principal>
+      <Dependent Role="DrugSaleItems">
+        <PropertyRef Name="WorkingMonthID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DrugSaleItems_WorkingYear">
+    <End Role="WorkingYear" Type="Self.WorkingYear" Multiplicity="1" />
+    <End Role="DrugSaleItems" Type="Self.DrugSaleItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkingYear">
+        <PropertyRef Name="WorkingYearID" />
+      </Principal>
+      <Dependent Role="DrugSaleItems">
+        <PropertyRef Name="WorkingYearID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IncomingDrug_Supplier">
+    <End Role="Supplier" Type="Self.Supplier" Multiplicity="1" />
+    <End Role="IncomingDrug" Type="Self.IncomingDrug" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Supplier">
+        <PropertyRef Name="SupplierID" />
+      </Principal>
+      <Dependent Role="IncomingDrug">
+        <PropertyRef Name="SupplierID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IncomingDrug_WorkingDay">
+    <End Role="WorkingDay" Type="Self.WorkingDay" Multiplicity="1" />
+    <End Role="IncomingDrug" Type="Self.IncomingDrug" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkingDay">
+        <PropertyRef Name="WorkingDayID" />
+      </Principal>
+      <Dependent Role="IncomingDrug">
+        <PropertyRef Name="WorkingDayID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IncomingDrug_WorkingMonth">
+    <End Role="WorkingMonth" Type="Self.WorkingMonth" Multiplicity="1" />
+    <End Role="IncomingDrug" Type="Self.IncomingDrug" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkingMonth">
+        <PropertyRef Name="WorkingMonthID" />
+      </Principal>
+      <Dependent Role="IncomingDrug">
+        <PropertyRef Name="WorkingMonthID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IncomingDrug_WorkingYear">
+    <End Role="WorkingYear" Type="Self.WorkingYear" Multiplicity="1" />
+    <End Role="IncomingDrug" Type="Self.IncomingDrug" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkingYear">
+        <PropertyRef Name="WorkingYearID" />
+      </Principal>
+      <Dependent Role="IncomingDrug">
+        <PropertyRef Name="WorkingYearID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IncomingDrugItems_Drugs">
+    <End Role="Drugs" Type="Self.Drugs" Multiplicity="1" />
+    <End Role="IncomingDrugItems" Type="Self.IncomingDrugItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Drugs">
+        <PropertyRef Name="DrugID" />
+      </Principal>
+      <Dependent Role="IncomingDrugItems">
+        <PropertyRef Name="DrugID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IncomingDrugItems_IncomingDrug">
+    <End Role="IncomingDrug" Type="Self.IncomingDrug" Multiplicity="1" />
+    <End Role="IncomingDrugItems" Type="Self.IncomingDrugItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="IncomingDrug">
+        <PropertyRef Name="IncomingDrugID" />
+      </Principal>
+      <Dependent Role="IncomingDrugItems">
+        <PropertyRef Name="IncomingDrugID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IncomingDrugItems_WorkingDay">
+    <End Role="WorkingDay" Type="Self.WorkingDay" Multiplicity="1" />
+    <End Role="IncomingDrugItems" Type="Self.IncomingDrugItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkingDay">
+        <PropertyRef Name="WorkingDayID" />
+      </Principal>
+      <Dependent Role="IncomingDrugItems">
+        <PropertyRef Name="WorkingDayID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IncomingDrugItems_WorkingMonth">
+    <End Role="WorkingMonth" Type="Self.WorkingMonth" Multiplicity="1" />
+    <End Role="IncomingDrugItems" Type="Self.IncomingDrugItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkingMonth">
+        <PropertyRef Name="WorkingMonthID" />
+      </Principal>
+      <Dependent Role="IncomingDrugItems">
+        <PropertyRef Name="WorkingMonthID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IncomingDrugItems_WorkingYear">
+    <End Role="WorkingYear" Type="Self.WorkingYear" Multiplicity="1" />
+    <End Role="IncomingDrugItems" Type="Self.IncomingDrugItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkingYear">
+        <PropertyRef Name="WorkingYearID" />
+      </Principal>
+      <Dependent Role="IncomingDrugItems">
+        <PropertyRef Name="WorkingYearID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IncomingItems_Supplier">
+    <End Role="Supplier" Type="Self.Supplier" Multiplicity="1" />
+    <End Role="IncomingItems" Type="Self.IncomingItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Supplier">
+        <PropertyRef Name="SupplierID" />
+      </Principal>
+      <Dependent Role="IncomingItems">
+        <PropertyRef Name="SupplierID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IncomingItems_WorkingDay">
+    <End Role="WorkingDay" Type="Self.WorkingDay" Multiplicity="1" />
+    <End Role="IncomingItems" Type="Self.IncomingItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkingDay">
+        <PropertyRef Name="WorkingDayID" />
+      </Principal>
+      <Dependent Role="IncomingItems">
+        <PropertyRef Name="WorkingDayID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IncomingItems_WorkingMonth">
+    <End Role="WorkingMonth" Type="Self.WorkingMonth" Multiplicity="1" />
+    <End Role="IncomingItems" Type="Self.IncomingItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkingMonth">
+        <PropertyRef Name="WorkingMonthID" />
+      </Principal>
+      <Dependent Role="IncomingItems">
+        <PropertyRef Name="WorkingMonthID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IncomingItems_WorkingYear">
+    <End Role="WorkingYear" Type="Self.WorkingYear" Multiplicity="1" />
+    <End Role="IncomingItems" Type="Self.IncomingItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkingYear">
+        <PropertyRef Name="WorkingYearID" />
+      </Principal>
+      <Dependent Role="IncomingItems">
+        <PropertyRef Name="WorkingYearID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IncomingItemsDetail_IncomingItems">
+    <End Role="IncomingItems" Type="Self.IncomingItems" Multiplicity="1" />
+    <End Role="IncomingItemsDetail" Type="Self.IncomingItemsDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="IncomingItems">
+        <PropertyRef Name="IncomingItemID" />
+      </Principal>
+      <Dependent Role="IncomingItemsDetail">
+        <PropertyRef Name="IncomingItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IncomingItemsDetail_Items">
+    <End Role="Items" Type="Self.Items" Multiplicity="1" />
+    <End Role="IncomingItemsDetail" Type="Self.IncomingItemsDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Items">
+        <PropertyRef Name="ItemID" />
+      </Principal>
+      <Dependent Role="IncomingItemsDetail">
+        <PropertyRef Name="ItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IncomingItemsDetail_WorkingDay">
+    <End Role="WorkingDay" Type="Self.WorkingDay" Multiplicity="1" />
+    <End Role="IncomingItemsDetail" Type="Self.IncomingItemsDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkingDay">
+        <PropertyRef Name="WorkingDayID" />
+      </Principal>
+      <Dependent Role="IncomingItemsDetail">
+        <PropertyRef Name="WorkingDayID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IncomingItemsDetail_WorkingMonth">
+    <End Role="WorkingMonth" Type="Self.WorkingMonth" Multiplicity="1" />
+    <End Role="IncomingItemsDetail" Type="Self.IncomingItemsDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkingMonth">
+        <PropertyRef Name="WorkingMonthID" />
+      </Principal>
+      <Dependent Role="IncomingItemsDetail">
+        <PropertyRef Name="WorkingMonthID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IncomingItemsDetail_WorkingYear">
+    <End Role="WorkingYear" Type="Self.WorkingYear" Multiplicity="1" />
+    <End Role="IncomingItemsDetail" Type="Self.IncomingItemsDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkingYear">
+        <PropertyRef Name="WorkingYearID" />
+      </Principal>
+      <Dependent Role="IncomingItemsDetail">
+        <PropertyRef Name="WorkingYearID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ItemCategory_ItemCategory">
+    <End Role="ItemCategory" Type="Self.ItemCategory" Multiplicity="1" />
+    <End Role="ItemCategory1" Type="Self.ItemCategory" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="ItemCategory">
+        <PropertyRef Name="ItemCategoryID" />
+      </Principal>
+      <Dependent Role="ItemCategory1">
+        <PropertyRef Name="ItemCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Items_ItemCategory">
+    <End Role="ItemCategory" Type="Self.ItemCategory" Multiplicity="1" />
+    <End Role="Items" Type="Self.Items" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ItemCategory">
+        <PropertyRef Name="ItemCategoryID" />
+      </Principal>
+      <Dependent Role="Items">
+        <PropertyRef Name="ItemCategoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Patient_Gender">
+    <End Role="Gender" Type="Self.Gender" Multiplicity="1" />
+    <End Role="Patient" Type="Self.Patient" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Gender">
+        <PropertyRef Name="GenderID" />
+      </Principal>
+      <Dependent Role="Patient">
+        <PropertyRef Name="GenderID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Receipt_ReceiptType">
+    <End Role="ReceiptType" Type="Self.ReceiptType" Multiplicity="1" />
+    <End Role="Receipt" Type="Self.Receipt" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ReceiptType">
+        <PropertyRef Name="ReceiptTypeID" />
+      </Principal>
+      <Dependent Role="Receipt">
+        <PropertyRef Name="ReceiptTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Refund_Receipt">
+    <End Role="Receipt" Type="Self.Receipt" Multiplicity="1" />
+    <End Role="Refund" Type="Self.Refund" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Receipt">
+        <PropertyRef Name="ReceiptID" />
+      </Principal>
+      <Dependent Role="Refund">
+        <PropertyRef Name="ReceiptID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Services_ConsultReview">
+    <End Role="ConsultReview" Type="Self.ConsultReview" Multiplicity="1" />
+    <End Role="Services" Type="Self.Services" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ConsultReview">
+        <PropertyRef Name="ConsultReviewID" />
+      </Principal>
+      <Dependent Role="Services">
+        <PropertyRef Name="ConsultReviewID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Services_Treatment">
+    <End Role="Treatment" Type="Self.Treatment" Multiplicity="1" />
+    <End Role="Services" Type="Self.Services" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Treatment">
+        <PropertyRef Name="TreatmentID" />
+      </Principal>
+      <Dependent Role="Services">
+        <PropertyRef Name="TreamentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Services_Visitation">
+    <End Role="Visitation" Type="Self.Visitation" Multiplicity="1" />
+    <End Role="Services" Type="Self.Services" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Visitation">
+        <PropertyRef Name="VisitationID" />
+      </Principal>
+      <Dependent Role="Services">
+        <PropertyRef Name="VisitationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Services_WorkingDay">
+    <End Role="WorkingDay" Type="Self.WorkingDay" Multiplicity="1" />
+    <End Role="Services" Type="Self.Services" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkingDay">
+        <PropertyRef Name="WorkingDayID" />
+      </Principal>
+      <Dependent Role="Services">
+        <PropertyRef Name="WorkingDayID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Services_WorkingMonth">
+    <End Role="WorkingMonth" Type="Self.WorkingMonth" Multiplicity="1" />
+    <End Role="Services" Type="Self.Services" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkingMonth">
+        <PropertyRef Name="WorkingMonthID" />
+      </Principal>
+      <Dependent Role="Services">
+        <PropertyRef Name="WorkingMonthID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Services_WorkingYear">
+    <End Role="WorkingYear" Type="Self.WorkingYear" Multiplicity="1" />
+    <End Role="Services" Type="Self.Services" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkingYear">
+        <PropertyRef Name="WorkingYearID" />
+      </Principal>
+      <Dependent Role="Services">
+        <PropertyRef Name="WorkingYearID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sponsor_InsuranceType">
+    <End Role="InsuranceType" Type="Self.InsuranceType" Multiplicity="1" />
+    <End Role="Sponsor" Type="Self.Sponsor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InsuranceType">
+        <PropertyRef Name="InsuranceTypeID" />
+      </Principal>
+      <Dependent Role="Sponsor">
+        <PropertyRef Name="InsuranceTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sponsor_Region">
+    <End Role="Region" Type="Self.Region" Multiplicity="1" />
+    <End Role="Sponsor" Type="Self.Sponsor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Region">
+        <PropertyRef Name="RegionID" />
+      </Principal>
+      <Dependent Role="Sponsor">
+        <PropertyRef Name="RegionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sponsor_Status">
+    <End Role="Status" Type="Self.Status" Multiplicity="1" />
+    <End Role="Sponsor" Type="Self.Sponsor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="StatusId" />
+      </Principal>
+      <Dependent Role="Sponsor">
+        <PropertyRef Name="StatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SponsorCategory_Sponsor">
+    <End Role="Sponsor" Type="Self.Sponsor" Multiplicity="1" />
+    <End Role="SponsorCategory" Type="Self.SponsorCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sponsor">
+        <PropertyRef Name="SponsorID" />
+      </Principal>
+      <Dependent Role="SponsorCategory">
+        <PropertyRef Name="SponsorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SponsorCategory_SubSponsor">
+    <End Role="SubSponsor" Type="Self.SubSponsor" Multiplicity="1" />
+    <End Role="SponsorCategory" Type="Self.SponsorCategory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubSponsor">
+        <PropertyRef Name="SubSponsorID" />
+      </Principal>
+      <Dependent Role="SponsorCategory">
+        <PropertyRef Name="SubSponsorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Staff_Status">
+    <End Role="Status" Type="Self.Status" Multiplicity="1" />
+    <End Role="Staff" Type="Self.Staff" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="StatusId" />
+      </Principal>
+      <Dependent Role="Staff">
+        <PropertyRef Name="StatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubSponsor_Region">
+    <End Role="Region" Type="Self.Region" Multiplicity="1" />
+    <End Role="SubSponsor" Type="Self.SubSponsor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Region">
+        <PropertyRef Name="RegionID" />
+      </Principal>
+      <Dependent Role="SubSponsor">
+        <PropertyRef Name="RegionID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubSponsor_Sponsor">
+    <End Role="Sponsor" Type="Self.Sponsor" Multiplicity="1" />
+    <End Role="SubSponsor" Type="Self.SubSponsor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sponsor">
+        <PropertyRef Name="SponsorID" />
+      </Principal>
+      <Dependent Role="SubSponsor">
+        <PropertyRef Name="SponsorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SubSponsor_Status">
+    <End Role="Status" Type="Self.Status" Multiplicity="1" />
+    <End Role="SubSponsor" Type="Self.SubSponsor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="StatusId" />
+      </Principal>
+      <Dependent Role="SubSponsor">
+        <PropertyRef Name="StatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Supplier_Status">
+    <End Role="Status" Type="Self.Status" Multiplicity="1" />
+    <End Role="Supplier" Type="Self.Supplier" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="StatusId" />
+      </Principal>
+      <Dependent Role="Supplier">
+        <PropertyRef Name="StatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SystemUser_Role">
+    <End Role="Role" Type="Self.Role" Multiplicity="1" />
+    <End Role="SystemUser" Type="Self.SystemUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="RoleID" />
+      </Principal>
+      <Dependent Role="SystemUser">
+        <PropertyRef Name="roleid" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SystemUser_Staff">
+    <End Role="Staff" Type="Self.Staff" Multiplicity="1" />
+    <End Role="SystemUser" Type="Self.SystemUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Staff">
+        <PropertyRef Name="StaffId" />
+      </Principal>
+      <Dependent Role="SystemUser">
+        <PropertyRef Name="StaffId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SystemUser_Status">
+    <End Role="Status" Type="Self.Status" Multiplicity="1" />
+    <End Role="SystemUser" Type="Self.SystemUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="StatusId" />
+      </Principal>
+      <Dependent Role="SystemUser">
+        <PropertyRef Name="statusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Treatment_Status">
+    <End Role="Status" Type="Self.Status" Multiplicity="1" />
+    <End Role="Treatment" Type="Self.Treatment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="StatusId" />
+      </Principal>
+      <Dependent Role="Treatment">
+        <PropertyRef Name="StatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Visitation_AgeGroup">
+    <End Role="AgeGroup" Type="Self.AgeGroup" Multiplicity="1" />
+    <End Role="Visitation" Type="Self.Visitation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AgeGroup">
+        <PropertyRef Name="AgeGroupID" />
+      </Principal>
+      <Dependent Role="Visitation">
+        <PropertyRef Name="AgeGroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Visitation_BillingGroup">
+    <End Role="BillingGroup" Type="Self.BillingGroup" Multiplicity="1" />
+    <End Role="Visitation" Type="Self.Visitation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BillingGroup">
+        <PropertyRef Name="BillingGroupID" />
+      </Principal>
+      <Dependent Role="Visitation">
+        <PropertyRef Name="BillingGroupID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Visitation_Consultation">
+    <End Role="Consultation" Type="Self.Consultation" Multiplicity="1" />
+    <End Role="Visitation" Type="Self.Visitation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Consultation">
+        <PropertyRef Name="ConsultationID" />
+      </Principal>
+      <Dependent Role="Visitation">
+        <PropertyRef Name="ConsultationID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Visitation_Doctor">
+    <End Role="Doctor" Type="Self.Doctor" Multiplicity="1" />
+    <End Role="Visitation" Type="Self.Visitation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Doctor">
+        <PropertyRef Name="DoctorID" />
+      </Principal>
+      <Dependent Role="Visitation">
+        <PropertyRef Name="DoctorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Visitation_InsuranceType">
+    <End Role="InsuranceType" Type="Self.InsuranceType" Multiplicity="1" />
+    <End Role="Visitation" Type="Self.Visitation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InsuranceType">
+        <PropertyRef Name="InsuranceTypeID" />
+      </Principal>
+      <Dependent Role="Visitation">
+        <PropertyRef Name="InsuranceTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Visitation_InsuranceVal">
+    <End Role="InsuranceVal" Type="Self.InsuranceVal" Multiplicity="1" />
+    <End Role="Visitation" Type="Self.Visitation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InsuranceVal">
+        <PropertyRef Name="InsuranceValID" />
+      </Principal>
+      <Dependent Role="Visitation">
+        <PropertyRef Name="InsuranceValID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Visitation_Patient">
+    <End Role="Patient" Type="Self.Patient" Multiplicity="1" />
+    <End Role="Visitation" Type="Self.Visitation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Patient">
+        <PropertyRef Name="PatientID" />
+      </Principal>
+      <Dependent Role="Visitation">
+        <PropertyRef Name="PatientID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Visitation_RevenueCenter">
+    <End Role="RevenueCenter" Type="Self.RevenueCenter" Multiplicity="1" />
+    <End Role="Visitation" Type="Self.Visitation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="RevenueCenter">
+        <PropertyRef Name="RevenueCenterID" />
+      </Principal>
+      <Dependent Role="Visitation">
+        <PropertyRef Name="RevenueCenterID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Visitation_Specialty">
+    <End Role="Specialty" Type="Self.Specialty" Multiplicity="1" />
+    <End Role="Visitation" Type="Self.Visitation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Specialty">
+        <PropertyRef Name="SpecialtyID" />
+      </Principal>
+      <Dependent Role="Visitation">
+        <PropertyRef Name="SpecialtyID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Visitation_Sponsor">
+    <End Role="Sponsor" Type="Self.Sponsor" Multiplicity="1" />
+    <End Role="Visitation" Type="Self.Visitation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sponsor">
+        <PropertyRef Name="SponsorID" />
+      </Principal>
+      <Dependent Role="Visitation">
+        <PropertyRef Name="SponsorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Visitation_SubSponsor">
+    <End Role="SubSponsor" Type="Self.SubSponsor" Multiplicity="1" />
+    <End Role="Visitation" Type="Self.Visitation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SubSponsor">
+        <PropertyRef Name="SubSponsorID" />
+      </Principal>
+      <Dependent Role="Visitation">
+        <PropertyRef Name="SubSponsorID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Visitation_VisitStatus">
+    <End Role="VisitStatus" Type="Self.VisitStatus" Multiplicity="1" />
+    <End Role="Visitation" Type="Self.Visitation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VisitStatus">
+        <PropertyRef Name="VisitStatusID" />
+      </Principal>
+      <Dependent Role="Visitation">
+        <PropertyRef Name="VisitStatusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Visitation_VisitType">
+    <End Role="VisitType" Type="Self.VisitType" Multiplicity="1" />
+    <End Role="Visitation" Type="Self.Visitation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="VisitType">
+        <PropertyRef Name="VisitTypeID" />
+      </Principal>
+      <Dependent Role="Visitation">
+        <PropertyRef Name="VisitTypeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Visitation_WorkingDay">
+    <End Role="WorkingDay" Type="Self.WorkingDay" Multiplicity="1" />
+    <End Role="Visitation" Type="Self.Visitation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkingDay">
+        <PropertyRef Name="WorkingDayID" />
+      </Principal>
+      <Dependent Role="Visitation">
+        <PropertyRef Name="WorkingDayID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Visitation_WorkingMonth">
+    <End Role="WorkingMonth" Type="Self.WorkingMonth" Multiplicity="1" />
+    <End Role="Visitation" Type="Self.Visitation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkingMonth">
+        <PropertyRef Name="WorkingMonthID" />
+      </Principal>
+      <Dependent Role="Visitation">
+        <PropertyRef Name="WorkingMonthID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Visitation_WorkingYear">
+    <End Role="WorkingYear" Type="Self.WorkingYear" Multiplicity="1" />
+    <End Role="Visitation" Type="Self.Visitation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="WorkingYear">
+        <PropertyRef Name="WorkingYearID" />
+      </Principal>
+      <Dependent Role="Visitation">
+        <PropertyRef Name="WorkingYearID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="EMRSoftwareModelStoreContainer">
+    <EntitySet Name="AgeGroup" EntityType="Self.AgeGroup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BillingGroup" EntityType="Self.BillingGroup" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Consultation" EntityType="Self.Consultation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ConsultReview" EntityType="Self.ConsultReview" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Doctor" EntityType="Self.Doctor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DrugCategory" EntityType="Self.DrugCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Drugs" EntityType="Self.Drugs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DrugSale" EntityType="Self.DrugSale" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DrugType" EntityType="Self.DrugType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Gender" EntityType="Self.Gender" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IncomingDrug" EntityType="Self.IncomingDrug" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="IncomingItems" EntityType="Self.IncomingItems" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InsuranceType" EntityType="Self.InsuranceType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InsuranceVal" EntityType="Self.InsuranceVal" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ItemCategory" EntityType="Self.ItemCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Items" EntityType="Self.Items" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Patient" EntityType="Self.Patient" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Receipt" EntityType="Self.Receipt" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ReceiptType" EntityType="Self.ReceiptType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Refund" EntityType="Self.Refund" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Region" EntityType="Self.Region" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Relation" EntityType="Self.Relation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="RevenueCenter" EntityType="Self.RevenueCenter" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Specialty" EntityType="Self.Specialty" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sponsor" EntityType="Self.Sponsor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SponsorCategory" EntityType="Self.SponsorCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Staff" EntityType="Self.Staff" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SubSponsor" EntityType="Self.SubSponsor" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Supplier" EntityType="Self.Supplier" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SystemUser" EntityType="Self.SystemUser" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Treatment" EntityType="Self.Treatment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Unit" EntityType="Self.Unit" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Visitation" EntityType="Self.Visitation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VisitStatus" EntityType="Self.VisitStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VisitType" EntityType="Self.VisitType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WorkingDay" EntityType="Self.WorkingDay" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WorkingMonth" EntityType="Self.WorkingMonth" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="WorkingYear" EntityType="Self.WorkingYear" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DrugSaleItems" EntityType="Self.DrugSaleItems" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [DrugSaleItems].[DrugSaleID] AS [DrugSaleID], 
+    [DrugSaleItems].[DrugID] AS [DrugID], 
+    [DrugSaleItems].[VisitationID] AS [VisitationID], 
+    [DrugSaleItems].[PatientID] AS [PatientID], 
+    [DrugSaleItems].[unitCost] AS [unitCost], 
+    [DrugSaleItems].[Qty] AS [Qty], 
+    [DrugSaleItems].[FinalAmt] AS [FinalAmt], 
+    [DrugSaleItems].[InsuranceTypeID] AS [InsuranceTypeID], 
+    [DrugSaleItems].[InsuranceValID] AS [InsuranceValID], 
+    [DrugSaleItems].[DispenseDate] AS [DispenseDate], 
+    [DrugSaleItems].[WorkingYearID] AS [WorkingYearID], 
+    [DrugSaleItems].[WorkingMonthID] AS [WorkingMonthID], 
+    [DrugSaleItems].[WorkingDayID] AS [WorkingDayID], 
+    [DrugSaleItems].[DispenseDate1] AS [DispenseDate1], 
+    [DrugSaleItems].[DispenseDate2] AS [DispenseDate2], 
+    [DrugSaleItems].[DispenseDate3] AS [DispenseDate3], 
+    [DrugSaleItems].[DrugSaleItems1] AS [DrugSaleItems1], 
+    [DrugSaleItems].[DrugSaleItems2] AS [DrugSaleItems2], 
+    [DrugSaleItems].[DrugSaleItems3] AS [DrugSaleItems3]
+    FROM [dbo].[DrugSaleItems] AS [DrugSaleItems]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="IncomingDrugItems" EntityType="Self.IncomingDrugItems" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [IncomingDrugItems].[IncomingDrugID] AS [IncomingDrugID], 
+    [IncomingDrugItems].[DrugID] AS [DrugID], 
+    [IncomingDrugItems].[UnitCost] AS [UnitCost], 
+    [IncomingDrugItems].[Qty] AS [Qty], 
+    [IncomingDrugItems].[FinalAmt] AS [FinalAmt], 
+    [IncomingDrugItems].[EntryDate] AS [EntryDate], 
+    [IncomingDrugItems].[WorkingYearID] AS [WorkingYearID], 
+    [IncomingDrugItems].[WorkingMonthID] AS [WorkingMonthID], 
+    [IncomingDrugItems].[WorkingDayID] AS [WorkingDayID], 
+    [IncomingDrugItems].[IncomingDrugItems1] AS [IncomingDrugItems1], 
+    [IncomingDrugItems].[IncomingDrugItems2] AS [IncomingDrugItems2], 
+    [IncomingDrugItems].[IncomingDrugItems3] AS [IncomingDrugItems3], 
+    [IncomingDrugItems].[IncomingDrugItems4] AS [IncomingDrugItems4], 
+    [IncomingDrugItems].[IncomingDrugItems5] AS [IncomingDrugItems5]
+    FROM [dbo].[IncomingDrugItems] AS [IncomingDrugItems]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="IncomingItemsDetail" EntityType="Self.IncomingItemsDetail" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [IncomingItemsDetail].[IncomingItemID] AS [IncomingItemID], 
+    [IncomingItemsDetail].[ItemID] AS [ItemID], 
+    [IncomingItemsDetail].[UnitCost] AS [UnitCost], 
+    [IncomingItemsDetail].[Qty] AS [Qty], 
+    [IncomingItemsDetail].[FinalAmt] AS [FinalAmt], 
+    [IncomingItemsDetail].[EntryDate] AS [EntryDate], 
+    [IncomingItemsDetail].[WorkingYearID] AS [WorkingYearID], 
+    [IncomingItemsDetail].[WorkingMonthID] AS [WorkingMonthID], 
+    [IncomingItemsDetail].[WorkingDayID] AS [WorkingDayID], 
+    [IncomingItemsDetail].[IncomingItemsDetail1] AS [IncomingItemsDetail1], 
+    [IncomingItemsDetail].[IncomingItemsDetail2] AS [IncomingItemsDetail2], 
+    [IncomingItemsDetail].[IncomingItemsDetail3] AS [IncomingItemsDetail3], 
+    [IncomingItemsDetail].[IncomingItemsDetail4] AS [IncomingItemsDetail4], 
+    [IncomingItemsDetail].[IncomingItemsDetail5] AS [IncomingItemsDetail5]
+    FROM [dbo].[IncomingItemsDetail] AS [IncomingItemsDetail]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Services" EntityType="Self.Services" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Services].[TreamentID] AS [TreamentID], 
+    [Services].[ConsultReviewID] AS [ConsultReviewID], 
+    [Services].[VisitationID] AS [VisitationID], 
+    [Services].[UnitCost] AS [UnitCost], 
+    [Services].[Qty] AS [Qty], 
+    [Services].[FinalAmt] AS [FinalAmt], 
+    [Services].[WorkingYearID] AS [WorkingYearID], 
+    [Services].[WorkingMonthID] AS [WorkingMonthID], 
+    [Services].[WorkingDayID] AS [WorkingDayID], 
+    [Services].[Service1] AS [Service1], 
+    [Services].[Service2] AS [Service2], 
+    [Services].[Service3] AS [Service3], 
+    [Services].[Service4] AS [Service4], 
+    [Services].[Service5] AS [Service5]
+    FROM [dbo].[Services] AS [Services]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK_BillingGroup_BillingGroup" Association="Self.FK_BillingGroup_BillingGroup">
+      <End Role="BillingGroup" EntitySet="BillingGroup" />
+      <End Role="BillingGroup1" EntitySet="BillingGroup" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BillingGroup_Patient" Association="Self.FK_BillingGroup_Patient">
+      <End Role="Patient" EntitySet="Patient" />
+      <End Role="BillingGroup" EntitySet="BillingGroup" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BillingGroup_Relation" Association="Self.FK_BillingGroup_Relation">
+      <End Role="Relation" EntitySet="Relation" />
+      <End Role="BillingGroup" EntitySet="BillingGroup" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BillingGroup_Sponsor" Association="Self.FK_BillingGroup_Sponsor">
+      <End Role="Sponsor" EntitySet="Sponsor" />
+      <End Role="BillingGroup" EntitySet="BillingGroup" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BillingGroup_SponsorCategory" Association="Self.FK_BillingGroup_SponsorCategory">
+      <End Role="SponsorCategory" EntitySet="SponsorCategory" />
+      <End Role="BillingGroup" EntitySet="BillingGroup" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BillingGroup_Status" Association="Self.FK_BillingGroup_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="BillingGroup" EntitySet="BillingGroup" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BillingGroup_SubSponsor" Association="Self.FK_BillingGroup_SubSponsor">
+      <End Role="SubSponsor" EntitySet="SubSponsor" />
+      <End Role="BillingGroup" EntitySet="BillingGroup" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ConsultReview_ConsultReview" Association="Self.FK_ConsultReview_ConsultReview">
+      <End Role="ConsultReview" EntitySet="ConsultReview" />
+      <End Role="ConsultReview1" EntitySet="ConsultReview" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ConsultReview_Patient" Association="Self.FK_ConsultReview_Patient">
+      <End Role="Patient" EntitySet="Patient" />
+      <End Role="ConsultReview" EntitySet="ConsultReview" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ConsultReview_RevenueCenter" Association="Self.FK_ConsultReview_RevenueCenter">
+      <End Role="RevenueCenter" EntitySet="RevenueCenter" />
+      <End Role="ConsultReview" EntitySet="ConsultReview" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ConsultReview_Sponsor" Association="Self.FK_ConsultReview_Sponsor">
+      <End Role="Sponsor" EntitySet="Sponsor" />
+      <End Role="ConsultReview" EntitySet="ConsultReview" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ConsultReview_Visitation" Association="Self.FK_ConsultReview_Visitation">
+      <End Role="Visitation" EntitySet="Visitation" />
+      <End Role="ConsultReview" EntitySet="ConsultReview" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ConsultReview_WorkingDay" Association="Self.FK_ConsultReview_WorkingDay">
+      <End Role="WorkingDay" EntitySet="WorkingDay" />
+      <End Role="ConsultReview" EntitySet="ConsultReview" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ConsultReview_WorkingMonth" Association="Self.FK_ConsultReview_WorkingMonth">
+      <End Role="WorkingMonth" EntitySet="WorkingMonth" />
+      <End Role="ConsultReview" EntitySet="ConsultReview" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ConsultReview_WorkingYear" Association="Self.FK_ConsultReview_WorkingYear">
+      <End Role="WorkingYear" EntitySet="WorkingYear" />
+      <End Role="ConsultReview" EntitySet="ConsultReview" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Doctor_Specialty" Association="Self.FK_Doctor_Specialty">
+      <End Role="Specialty" EntitySet="Specialty" />
+      <End Role="Doctor" EntitySet="Doctor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Drugs_DrugCategory" Association="Self.FK_Drugs_DrugCategory">
+      <End Role="DrugCategory" EntitySet="DrugCategory" />
+      <End Role="Drugs" EntitySet="Drugs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Drugs_DrugType" Association="Self.FK_Drugs_DrugType">
+      <End Role="DrugType" EntitySet="DrugType" />
+      <End Role="Drugs" EntitySet="Drugs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DrugSale_Patient" Association="Self.FK_DrugSale_Patient">
+      <End Role="Patient" EntitySet="Patient" />
+      <End Role="DrugSale" EntitySet="DrugSale" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DrugSale_RevenueCenter" Association="Self.FK_DrugSale_RevenueCenter">
+      <End Role="RevenueCenter" EntitySet="RevenueCenter" />
+      <End Role="DrugSale" EntitySet="DrugSale" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DrugSale_Sponsor" Association="Self.FK_DrugSale_Sponsor">
+      <End Role="Sponsor" EntitySet="Sponsor" />
+      <End Role="DrugSale" EntitySet="DrugSale" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DrugSale_Visitation" Association="Self.FK_DrugSale_Visitation">
+      <End Role="Visitation" EntitySet="Visitation" />
+      <End Role="DrugSale" EntitySet="DrugSale" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DrugSaleItems_Drugs" Association="Self.FK_DrugSaleItems_Drugs">
+      <End Role="Drugs" EntitySet="Drugs" />
+      <End Role="DrugSaleItems" EntitySet="DrugSaleItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DrugSaleItems_DrugSale" Association="Self.FK_DrugSaleItems_DrugSale">
+      <End Role="DrugSale" EntitySet="DrugSale" />
+      <End Role="DrugSaleItems" EntitySet="DrugSaleItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DrugSaleItems_InsuranceType" Association="Self.FK_DrugSaleItems_InsuranceType">
+      <End Role="InsuranceType" EntitySet="InsuranceType" />
+      <End Role="DrugSaleItems" EntitySet="DrugSaleItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DrugSaleItems_InsuranceVal" Association="Self.FK_DrugSaleItems_InsuranceVal">
+      <End Role="InsuranceVal" EntitySet="InsuranceVal" />
+      <End Role="DrugSaleItems" EntitySet="DrugSaleItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DrugSaleItems_Patient" Association="Self.FK_DrugSaleItems_Patient">
+      <End Role="Patient" EntitySet="Patient" />
+      <End Role="DrugSaleItems" EntitySet="DrugSaleItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DrugSaleItems_Visitation" Association="Self.FK_DrugSaleItems_Visitation">
+      <End Role="Visitation" EntitySet="Visitation" />
+      <End Role="DrugSaleItems" EntitySet="DrugSaleItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DrugSaleItems_WorkingDay" Association="Self.FK_DrugSaleItems_WorkingDay">
+      <End Role="WorkingDay" EntitySet="WorkingDay" />
+      <End Role="DrugSaleItems" EntitySet="DrugSaleItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DrugSaleItems_WorkingMonth" Association="Self.FK_DrugSaleItems_WorkingMonth">
+      <End Role="WorkingMonth" EntitySet="WorkingMonth" />
+      <End Role="DrugSaleItems" EntitySet="DrugSaleItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DrugSaleItems_WorkingYear" Association="Self.FK_DrugSaleItems_WorkingYear">
+      <End Role="WorkingYear" EntitySet="WorkingYear" />
+      <End Role="DrugSaleItems" EntitySet="DrugSaleItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IncomingDrug_Supplier" Association="Self.FK_IncomingDrug_Supplier">
+      <End Role="Supplier" EntitySet="Supplier" />
+      <End Role="IncomingDrug" EntitySet="IncomingDrug" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IncomingDrug_WorkingDay" Association="Self.FK_IncomingDrug_WorkingDay">
+      <End Role="WorkingDay" EntitySet="WorkingDay" />
+      <End Role="IncomingDrug" EntitySet="IncomingDrug" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IncomingDrug_WorkingMonth" Association="Self.FK_IncomingDrug_WorkingMonth">
+      <End Role="WorkingMonth" EntitySet="WorkingMonth" />
+      <End Role="IncomingDrug" EntitySet="IncomingDrug" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IncomingDrug_WorkingYear" Association="Self.FK_IncomingDrug_WorkingYear">
+      <End Role="WorkingYear" EntitySet="WorkingYear" />
+      <End Role="IncomingDrug" EntitySet="IncomingDrug" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IncomingDrugItems_Drugs" Association="Self.FK_IncomingDrugItems_Drugs">
+      <End Role="Drugs" EntitySet="Drugs" />
+      <End Role="IncomingDrugItems" EntitySet="IncomingDrugItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IncomingDrugItems_IncomingDrug" Association="Self.FK_IncomingDrugItems_IncomingDrug">
+      <End Role="IncomingDrug" EntitySet="IncomingDrug" />
+      <End Role="IncomingDrugItems" EntitySet="IncomingDrugItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IncomingDrugItems_WorkingDay" Association="Self.FK_IncomingDrugItems_WorkingDay">
+      <End Role="WorkingDay" EntitySet="WorkingDay" />
+      <End Role="IncomingDrugItems" EntitySet="IncomingDrugItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IncomingDrugItems_WorkingMonth" Association="Self.FK_IncomingDrugItems_WorkingMonth">
+      <End Role="WorkingMonth" EntitySet="WorkingMonth" />
+      <End Role="IncomingDrugItems" EntitySet="IncomingDrugItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IncomingDrugItems_WorkingYear" Association="Self.FK_IncomingDrugItems_WorkingYear">
+      <End Role="WorkingYear" EntitySet="WorkingYear" />
+      <End Role="IncomingDrugItems" EntitySet="IncomingDrugItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IncomingItems_Supplier" Association="Self.FK_IncomingItems_Supplier">
+      <End Role="Supplier" EntitySet="Supplier" />
+      <End Role="IncomingItems" EntitySet="IncomingItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IncomingItems_WorkingDay" Association="Self.FK_IncomingItems_WorkingDay">
+      <End Role="WorkingDay" EntitySet="WorkingDay" />
+      <End Role="IncomingItems" EntitySet="IncomingItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IncomingItems_WorkingMonth" Association="Self.FK_IncomingItems_WorkingMonth">
+      <End Role="WorkingMonth" EntitySet="WorkingMonth" />
+      <End Role="IncomingItems" EntitySet="IncomingItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IncomingItems_WorkingYear" Association="Self.FK_IncomingItems_WorkingYear">
+      <End Role="WorkingYear" EntitySet="WorkingYear" />
+      <End Role="IncomingItems" EntitySet="IncomingItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IncomingItemsDetail_IncomingItems" Association="Self.FK_IncomingItemsDetail_IncomingItems">
+      <End Role="IncomingItems" EntitySet="IncomingItems" />
+      <End Role="IncomingItemsDetail" EntitySet="IncomingItemsDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IncomingItemsDetail_Items" Association="Self.FK_IncomingItemsDetail_Items">
+      <End Role="Items" EntitySet="Items" />
+      <End Role="IncomingItemsDetail" EntitySet="IncomingItemsDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IncomingItemsDetail_WorkingDay" Association="Self.FK_IncomingItemsDetail_WorkingDay">
+      <End Role="WorkingDay" EntitySet="WorkingDay" />
+      <End Role="IncomingItemsDetail" EntitySet="IncomingItemsDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IncomingItemsDetail_WorkingMonth" Association="Self.FK_IncomingItemsDetail_WorkingMonth">
+      <End Role="WorkingMonth" EntitySet="WorkingMonth" />
+      <End Role="IncomingItemsDetail" EntitySet="IncomingItemsDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IncomingItemsDetail_WorkingYear" Association="Self.FK_IncomingItemsDetail_WorkingYear">
+      <End Role="WorkingYear" EntitySet="WorkingYear" />
+      <End Role="IncomingItemsDetail" EntitySet="IncomingItemsDetail" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ItemCategory_ItemCategory" Association="Self.FK_ItemCategory_ItemCategory">
+      <End Role="ItemCategory" EntitySet="ItemCategory" />
+      <End Role="ItemCategory1" EntitySet="ItemCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Items_ItemCategory" Association="Self.FK_Items_ItemCategory">
+      <End Role="ItemCategory" EntitySet="ItemCategory" />
+      <End Role="Items" EntitySet="Items" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Patient_Gender" Association="Self.FK_Patient_Gender">
+      <End Role="Gender" EntitySet="Gender" />
+      <End Role="Patient" EntitySet="Patient" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Receipt_ReceiptType" Association="Self.FK_Receipt_ReceiptType">
+      <End Role="ReceiptType" EntitySet="ReceiptType" />
+      <End Role="Receipt" EntitySet="Receipt" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Refund_Receipt" Association="Self.FK_Refund_Receipt">
+      <End Role="Receipt" EntitySet="Receipt" />
+      <End Role="Refund" EntitySet="Refund" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Services_ConsultReview" Association="Self.FK_Services_ConsultReview">
+      <End Role="ConsultReview" EntitySet="ConsultReview" />
+      <End Role="Services" EntitySet="Services" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Services_Treatment" Association="Self.FK_Services_Treatment">
+      <End Role="Treatment" EntitySet="Treatment" />
+      <End Role="Services" EntitySet="Services" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Services_Visitation" Association="Self.FK_Services_Visitation">
+      <End Role="Visitation" EntitySet="Visitation" />
+      <End Role="Services" EntitySet="Services" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Services_WorkingDay" Association="Self.FK_Services_WorkingDay">
+      <End Role="WorkingDay" EntitySet="WorkingDay" />
+      <End Role="Services" EntitySet="Services" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Services_WorkingMonth" Association="Self.FK_Services_WorkingMonth">
+      <End Role="WorkingMonth" EntitySet="WorkingMonth" />
+      <End Role="Services" EntitySet="Services" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Services_WorkingYear" Association="Self.FK_Services_WorkingYear">
+      <End Role="WorkingYear" EntitySet="WorkingYear" />
+      <End Role="Services" EntitySet="Services" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sponsor_InsuranceType" Association="Self.FK_Sponsor_InsuranceType">
+      <End Role="InsuranceType" EntitySet="InsuranceType" />
+      <End Role="Sponsor" EntitySet="Sponsor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sponsor_Region" Association="Self.FK_Sponsor_Region">
+      <End Role="Region" EntitySet="Region" />
+      <End Role="Sponsor" EntitySet="Sponsor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sponsor_Status" Association="Self.FK_Sponsor_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Sponsor" EntitySet="Sponsor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SponsorCategory_Sponsor" Association="Self.FK_SponsorCategory_Sponsor">
+      <End Role="Sponsor" EntitySet="Sponsor" />
+      <End Role="SponsorCategory" EntitySet="SponsorCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SponsorCategory_SubSponsor" Association="Self.FK_SponsorCategory_SubSponsor">
+      <End Role="SubSponsor" EntitySet="SubSponsor" />
+      <End Role="SponsorCategory" EntitySet="SponsorCategory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Staff_Status" Association="Self.FK_Staff_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Staff" EntitySet="Staff" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubSponsor_Region" Association="Self.FK_SubSponsor_Region">
+      <End Role="Region" EntitySet="Region" />
+      <End Role="SubSponsor" EntitySet="SubSponsor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubSponsor_Sponsor" Association="Self.FK_SubSponsor_Sponsor">
+      <End Role="Sponsor" EntitySet="Sponsor" />
+      <End Role="SubSponsor" EntitySet="SubSponsor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SubSponsor_Status" Association="Self.FK_SubSponsor_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="SubSponsor" EntitySet="SubSponsor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Supplier_Status" Association="Self.FK_Supplier_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Supplier" EntitySet="Supplier" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SystemUser_Role" Association="Self.FK_SystemUser_Role">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="SystemUser" EntitySet="SystemUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SystemUser_Staff" Association="Self.FK_SystemUser_Staff">
+      <End Role="Staff" EntitySet="Staff" />
+      <End Role="SystemUser" EntitySet="SystemUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SystemUser_Status" Association="Self.FK_SystemUser_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="SystemUser" EntitySet="SystemUser" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Treatment_Status" Association="Self.FK_Treatment_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Treatment" EntitySet="Treatment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Visitation_AgeGroup" Association="Self.FK_Visitation_AgeGroup">
+      <End Role="AgeGroup" EntitySet="AgeGroup" />
+      <End Role="Visitation" EntitySet="Visitation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Visitation_BillingGroup" Association="Self.FK_Visitation_BillingGroup">
+      <End Role="BillingGroup" EntitySet="BillingGroup" />
+      <End Role="Visitation" EntitySet="Visitation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Visitation_Consultation" Association="Self.FK_Visitation_Consultation">
+      <End Role="Consultation" EntitySet="Consultation" />
+      <End Role="Visitation" EntitySet="Visitation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Visitation_Doctor" Association="Self.FK_Visitation_Doctor">
+      <End Role="Doctor" EntitySet="Doctor" />
+      <End Role="Visitation" EntitySet="Visitation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Visitation_InsuranceType" Association="Self.FK_Visitation_InsuranceType">
+      <End Role="InsuranceType" EntitySet="InsuranceType" />
+      <End Role="Visitation" EntitySet="Visitation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Visitation_InsuranceVal" Association="Self.FK_Visitation_InsuranceVal">
+      <End Role="InsuranceVal" EntitySet="InsuranceVal" />
+      <End Role="Visitation" EntitySet="Visitation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Visitation_Patient" Association="Self.FK_Visitation_Patient">
+      <End Role="Patient" EntitySet="Patient" />
+      <End Role="Visitation" EntitySet="Visitation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Visitation_RevenueCenter" Association="Self.FK_Visitation_RevenueCenter">
+      <End Role="RevenueCenter" EntitySet="RevenueCenter" />
+      <End Role="Visitation" EntitySet="Visitation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Visitation_Specialty" Association="Self.FK_Visitation_Specialty">
+      <End Role="Specialty" EntitySet="Specialty" />
+      <End Role="Visitation" EntitySet="Visitation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Visitation_Sponsor" Association="Self.FK_Visitation_Sponsor">
+      <End Role="Sponsor" EntitySet="Sponsor" />
+      <End Role="Visitation" EntitySet="Visitation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Visitation_SubSponsor" Association="Self.FK_Visitation_SubSponsor">
+      <End Role="SubSponsor" EntitySet="SubSponsor" />
+      <End Role="Visitation" EntitySet="Visitation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Visitation_VisitStatus" Association="Self.FK_Visitation_VisitStatus">
+      <End Role="VisitStatus" EntitySet="VisitStatus" />
+      <End Role="Visitation" EntitySet="Visitation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Visitation_VisitType" Association="Self.FK_Visitation_VisitType">
+      <End Role="VisitType" EntitySet="VisitType" />
+      <End Role="Visitation" EntitySet="Visitation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Visitation_WorkingDay" Association="Self.FK_Visitation_WorkingDay">
+      <End Role="WorkingDay" EntitySet="WorkingDay" />
+      <End Role="Visitation" EntitySet="Visitation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Visitation_WorkingMonth" Association="Self.FK_Visitation_WorkingMonth">
+      <End Role="WorkingMonth" EntitySet="WorkingMonth" />
+      <End Role="Visitation" EntitySet="Visitation" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Visitation_WorkingYear" Association="Self.FK_Visitation_WorkingYear">
+      <End Role="WorkingYear" EntitySet="WorkingYear" />
+      <End Role="Visitation" EntitySet="Visitation" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
